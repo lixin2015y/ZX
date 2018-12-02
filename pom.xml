@@ -6,7 +6,11 @@
 
     <groupId>com.lee</groupId>
     <artifactId>zx</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
-
-
+    <modules>
+        <module>api</module>
+        <module>provider</module>
+        <module>consumer</module>
+    </modules>
 </project>

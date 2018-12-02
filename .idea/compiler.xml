@@ -6,8 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zx" />
+        <module name="api" />
+        <module name="consumer" />
+        <module name="provider" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="consummer" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

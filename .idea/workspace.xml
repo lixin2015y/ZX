@@ -1,14 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c917e8be-fae8-47c1-8dfb-5cb1d03ee189" name="Default Changelist" comment="" />
+    <list default="true" id="c917e8be-fae8-47c1-8dfb-5cb1d03ee189" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/lee/api/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/lee/constant/ResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/lee/constant/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/lee/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/lee/utils/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/lee/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/lee/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/lee/interceptor/PassportInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/lee/model/HostHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/dubbo/consumer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/case/case.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/catalog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/column.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/filter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/link.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/user-nav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/other/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/other/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/other/tips.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/activate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/forget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/set.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/json/signin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/css/full.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/css/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/css/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/css/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/css/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/css/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/00.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/avatar/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/case.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/fly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/logo-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/other/1437100018023.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/other/study-a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/images/weixin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/layui.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/images/face/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/layedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/layui.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/layui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/mods/case.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/mods/face.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/mods/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/mods/jie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/mods/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/java/com/lee/Provider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/java/com/lee/dao/ZxDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/java/com/lee/service/LoginServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/resources/dubbo/provider.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/resources/mapper/ZxMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/test/java/com/lee/ZxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/api/target/" />
+    <ignored path="$PROJECT_DIR$/provider/target/" />
+    <ignored path="$PROJECT_DIR$/consummer/target/" />
+    <ignored path="$PROJECT_DIR$/consumer/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="139834695">
@@ -36,19 +247,133 @@
     <session id="-1073027099">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.40" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="LICENSE" value="1" />
+          <entry key="class" value="1" />
+          <entry key="css" value="1" />
+          <entry key="html" value="21" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="49" />
+          <entry key="js" value="4" />
+          <entry key="md" value="6" />
+          <entry key="properties" value="6" />
+          <entry key="vmoptions" value="2" />
+          <entry key="xml" value="29" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="21" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="49" />
+          <entry key="JavaScript" value="4" />
+          <entry key="Markdown" value="6" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Properties" value="6" />
+          <entry key="XML" value="29" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="410" />
+          <entry key="java" value="3638" />
+          <entry key="js" value="65" />
+          <entry key="md" value="398" />
+          <entry key="properties" value="75" />
+          <entry key="vmoptions" value="4" />
+          <entry key="xml" value="1145" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="410" />
+          <entry key="JAVA" value="3638" />
+          <entry key="JavaScript" value="65" />
+          <entry key="Markdown" value="398" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Properties" value="75" />
+          <entry key="SQL" value="13" />
+          <entry key="XML" value="1132" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="392">
+                <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/other/404.html" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/footer.html" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/lee/constant/ResponseMessage.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/lee/constant/Result.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions" />
+        <option value="$PROJECT_DIR$/provider/src/main/resources/application/application.properties" />
+        <option value="$PROJECT_DIR$/api/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/src/main/resources/dubbo/provider.xml" />
+        <option value="$PROJECT_DIR$/provider/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/provider/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/provider/src/main/java/com/lee/Provider.java" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/dubbo/consumer.xml" />
+        <option value="$PROJECT_DIR$/consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/Consumer.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/lee/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/layui.js" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/lee/entity/User.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/lee/api/LoginService.java" />
+        <option value="$PROJECT_DIR$/provider/src/main/java/com/lee/dao/ZxDao.java" />
+        <option value="$PROJECT_DIR$/provider/src/main/java/com/lee/service/LoginServiceImp.java" />
+        <option value="$PROJECT_DIR$/provider/src/test/java/com/lee/ZxTest.java" />
+        <option value="$PROJECT_DIR$/provider/src/main/resources/mapper/ZxMapper.xml" />
+        <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/lee/constant/HostHolder.java" />
+        <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/model/HostHolder.java" />
+        <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/interceptor/PassportInterceptor.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -65,19 +390,57 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="consumer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="consumer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
     <option name="height" value="970" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SerializableHasSerialVersionUIDField</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -85,21 +448,49 @@
               <item name="zx" type="b2602c69:ProjectViewProjectNode" />
               <item name="zx" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543667251537" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543765026137" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IDEAStation\zx\zx\provider\src\main\resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IDEAStation\zx\zx\consumer\src\main\resources\webapp" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -112,6 +503,72 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Consumer">
+    <configuration name="ZxTest.test1" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="provider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lee" />
+      <option name="MAIN_CLASS_NAME" value="com.lee.ZxTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZxTest.test2" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="provider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lee" />
+      <option name="MAIN_CLASS_NAME" value="com.lee.ZxTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Consumer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lee.Consumer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Provider" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="provider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lee.Provider" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Consumer" />
+      <item itemvalue="Spring Boot.Provider" />
+      <item itemvalue="JUnit.ZxTest.test1" />
+      <item itemvalue="JUnit.ZxTest.test2" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -126,34 +583,75 @@
       <workItem from="1543666893091" duration="379000" />
       <workItem from="1543667275867" duration="2000" />
       <workItem from="1543667321568" duration="2747000" />
-      <workItem from="1543671337667" duration="299000" />
+      <workItem from="1543671337667" duration="1834000" />
+      <workItem from="1543721651232" duration="377000" />
+      <workItem from="1543722085837" duration="5535000" />
+      <workItem from="1543733264227" duration="1202000" />
+      <workItem from="1543734729332" duration="22463000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ZxTest_test1 - 2018.12.02 at 17h 02m 46s.xml">
+      <configuration name="ZxTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZxTest_test1 - 2018.12.02 at 17h 04m 27s.xml">
+      <configuration name="ZxTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZxTest_test1 - 2018.12.02 at 17h 06m 10s.xml">
+      <configuration name="ZxTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZxTest_test1 - 2018.12.02 at 17h 08m 06s.xml">
+      <configuration name="ZxTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZxTest_test1 - 2018.12.02 at 17h 08m 31s.xml">
+      <configuration name="ZxTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZxTest_test1 - 2018.12.02 at 17h 10m 10s.xml">
+      <configuration name="ZxTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZxTest_test1 - 2018.12.02 at 17h 12m 03s.xml">
+      <configuration name="ZxTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZxTest_test1 - 2018.12.02 at 17h 39m 55s.xml">
+      <configuration name="ZxTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZxTest_test2 - 2018.12.02 at 22h 32m 31s.xml">
+      <configuration name="ZxTest.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZxTest_test2 - 2018.12.02 at 22h 33m 43s.xml">
+      <configuration name="ZxTest.test2" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3427000" />
+    <option name="totallyTimeSpent" value="34539000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23324397" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17426273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.54184395" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.38439715" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Spring" order="11" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32907802" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -161,8 +659,9 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Database" order="7" weight="0.3297587" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.3297587" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,15 +677,365 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties" />
+    <entry file="file://$PROJECT_DIR$/consummer/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-4">
+            <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/CHANGELOG.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/json/signin.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/views/common/column.html" />
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/views/jie/add.html" />
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/activate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="102" column="27" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-672" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="921">
+          <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/other/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/other/notice.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/lee/constant/ResponseMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/res/css/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="138" column="1" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/target/classes/webapp/html/user/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="96" column="16" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/provider.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/lee/service/com/lee/Provider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/maven-repository/repository/org/apache/tomcat/embed/tomcat-embed-core/8.5.32/tomcat-embed-core-8.5.32.jar!/org/apache/catalina/util/LifecycleBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/lee/constant/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="17" column="4" selection-start-line="6" selection-start-column="14" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="24" column="44" lean-forward="true" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="30" column="21" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/lee/Provider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/resources/dubbo/provider.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/dubbo/consumer.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/lee/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1230#1231#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="804" column="18" lean-forward="true" selection-start-line="804" selection-start-column="18" selection-end-line="804" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/catalog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="106" column="26" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/lay/modules/jquery.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="142" column="29" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/lee/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="e#1253#1254#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/layui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1085">
+          <caret line="64" column="51" lean-forward="true" selection-start-line="64" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/test/java/com/lee/ZxTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/resources/mapper/ZxMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/lee/dao/ZxDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/lee/service/LoginServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/lee/api/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/model/HostHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#175#181#0" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/interceptor/PassportInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="392">
+            <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
