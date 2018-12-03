@@ -9,16 +9,17 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.rmi.CORBA.Util;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
-import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -29,6 +30,9 @@ import java.util.UUID;
 public class LoginController {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+
+    @Autowired
+    RedisTemplate redisTemplate;
 
     @Autowired
     LoginService loginService;
@@ -44,7 +48,8 @@ public class LoginController {
             return Result.error("用户已被注册");
         }
 
-        user.setId(Utils.getUUID(32));
+        String userId = Utils.getUUID(32);
+        user.setId(userId);
         user.setJointime(new Date());
         user.setSalt(Utils.getUUID(6));
         if (StringUtils.isBlank(user.getUsername())) {
@@ -68,6 +73,10 @@ public class LoginController {
 
         response.addCookie(cookie);
 
+        ValueOperations<String, User> valueOperations = redisTemplate.opsForValue();
+
+        valueOperations.set(ticket, user, 3600 * 24 * 5, TimeUnit.SECONDS);
+
         return Result.success("注册成功");
     }
 
@@ -88,10 +97,14 @@ public class LoginController {
             return Result.error("密码错误");
         }
 
-        //ticket
+        ValueOperations<String, User> valueOperations = redisTemplate.opsForValue();
 
+        String ticket = Utils.getUUID(20);
 
-        return Result.success();
+        valueOperations.set(ticket, user, 3600 * 24 * 5, TimeUnit.SECONDS);
+
+        return Result.success("注册成功");
+
     }
 
 }
