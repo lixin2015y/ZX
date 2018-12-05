@@ -22,7 +22,7 @@ public class ZxWebConfiguration implements WebMvcConfigurer {
         List<String> pattens = new ArrayList<String>();
         pattens.add("/html/user/login.html");
         pattens.add("/html/user/reg.html");
-        pattens.add("/**/login/**");
+        pattens.add("/login/**");
         pattens.add("/res/**");
         registry.addInterceptor(passportInterceptor).addPathPatterns("/**").excludePathPatterns(pattens);
     }

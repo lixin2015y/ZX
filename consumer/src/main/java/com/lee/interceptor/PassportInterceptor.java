@@ -2,6 +2,8 @@ package com.lee.interceptor;
 
 import com.lee.entity.User;
 import com.lee.model.HostHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -22,9 +24,10 @@ public class PassportInterceptor implements HandlerInterceptor {
     @Autowired
     RedisTemplate redisTemplate;
 
-
     @Autowired
     HostHolder hostHolder;
+
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
@@ -41,14 +44,17 @@ public class PassportInterceptor implements HandlerInterceptor {
         ValueOperations<String, User> valueOperations = redisTemplate.opsForValue();
 
         if (ticket != null) {
-            System.out.println("ticket不为空");
+            logger.info("存在ticket");
             //查询redis验证ticket
             if (redisTemplate.hasKey(ticket)) {
-                System.out.println("存在ticket");
+                logger.info("redis中ticket匹配");
                 hostHolder.setUser(valueOperations.get(ticket));
+            } else {
+                response.sendRedirect("/html/user/login.html");
+                return false;
             }
         } else {
-            System.out.println("ticket为空");
+            logger.info("ticket不存在");
             response.sendRedirect("/html/user/login.html");
             return false;
         }
@@ -56,9 +62,6 @@ public class PassportInterceptor implements HandlerInterceptor {
     }
 
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        if (modelAndView != null && hostHolder.getUser() != null) {
-            modelAndView.addObject("user", hostHolder.getUser());
-        }
     }
 
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {

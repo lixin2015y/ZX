@@ -37,4 +37,12 @@ public class LoginServiceImp implements LoginService {
     public User selectUserByEmail(String email) {
         return zxDao.selectUserByEmail(email);
     }
+
+    public void updateUserTicket(String email, String ticket) throws ZxException {
+        int i = zxDao.updateUserTicket(email, ticket);
+        if (i != 1) {
+            throw new ZxException("ticket信息修改异常" + i);
+        }
+
+    }
 }

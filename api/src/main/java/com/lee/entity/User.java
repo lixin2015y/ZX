@@ -17,6 +17,7 @@ public class User implements Serializable {
     private Date jointime;
     private String city;
     private String sign;
+    private String ticket;
 
     public String getId() {
         return id;
@@ -90,4 +91,11 @@ public class User implements Serializable {
         this.sign = sign;
     }
 
+    public String getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(String ticket) {
+        this.ticket = ticket;
+    }
 }

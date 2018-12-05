@@ -1,6 +1,7 @@
 package com.lee.dao;
 
 import com.lee.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface ZxDao {
 
@@ -11,4 +12,6 @@ public interface ZxDao {
     int checkUser(User user);
 
     User selectUserByEmail(String email);
+    
+    int updateUserTicket(@Param("email") String email, @Param("ticket") String ticket);
 }

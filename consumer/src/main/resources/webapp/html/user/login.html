@@ -48,24 +48,24 @@
         </ul>
 
         <!--<ul class="layui-nav fly-nav-user">-->
-            <!--&lt;!&ndash; 登入后的状态 &ndash;&gt;-->
-            <!--<li class="layui-nav-item">-->
-                <!--<a class="fly-nav-avatar" href="javascript:;">-->
-                    <!--<cite class="layui-hide-xs">{{user.username}}}</cite>-->
-                    <!--<i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i>-->
-                    <!--<i class="layui-badge fly-badge-vip layui-hide-xs">VIP3</i>-->
-                    <!--<img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">-->
-                <!--</a>-->
-                <!--<dl class="layui-nav-child">-->
-                    <!--<dd><a href="../user/set.html"><i class="layui-icon">&#xe620;</i>基本设置</a></dd>-->
-                    <!--<dd><a href="../user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a>-->
-                    <!--</dd>-->
-                    <!--<dd><a href="../user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>-->
-                    <!--</dd>-->
-                    <!--<hr style="margin: 5px 0;">-->
-                    <!--<dd><a href="" style="text-align: center;">退出</a></dd>-->
-                <!--</dl>-->
-            <!--</li>-->
+        <!--&lt;!&ndash; 登入后的状态 &ndash;&gt;-->
+        <!--<li class="layui-nav-item">-->
+        <!--<a class="fly-nav-avatar" href="javascript:;">-->
+        <!--<cite class="layui-hide-xs">{{user.username}}}</cite>-->
+        <!--<i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i>-->
+        <!--<i class="layui-badge fly-badge-vip layui-hide-xs">VIP3</i>-->
+        <!--<img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">-->
+        <!--</a>-->
+        <!--<dl class="layui-nav-child">-->
+        <!--<dd><a href="../user/set.html"><i class="layui-icon">&#xe620;</i>基本设置</a></dd>-->
+        <!--<dd><a href="../user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a>-->
+        <!--</dd>-->
+        <!--<dd><a href="../user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>-->
+        <!--</dd>-->
+        <!--<hr style="margin: 5px 0;">-->
+        <!--<dd><a href="" style="text-align: center;">退出</a></dd>-->
+        <!--</dl>-->
+        <!--</li>-->
         <!--</ul>-->
 
 
@@ -82,7 +82,7 @@
             <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                 <div class="layui-tab-item layui-show">
                     <div class="layui-form layui-form-pane">
-                        <form method="post">
+                        <form>
                             <div class="layui-form-item">
                                 <label for="L_email" class="layui-form-label">邮箱</label>
                                 <div class="layui-input-inline">
@@ -135,7 +135,38 @@
 </div>
 
 <script src="../../res/layui/layui.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
 <script>
+    layui.use('form', function () {
+
+        var form = layui.form;
+
+        // 监听提交
+        form.on('submit(login)', function (data) {
+            var login_result = $.ajax(address + '/login/login', {
+                dataType: 'json',
+                method: 'POST',
+                contentType: 'application/json;charset=utf-8',
+                dataType: 'json',
+                data: JSON.stringify(data.field)
+            }).done(function (data) {
+                if (data.code == '0') {
+                    layer.alert(data.message, {
+                        icon: 1,
+                        title: "提示"
+                    });
+                    window.location='../jie/index.html';
+                } else {
+                    layer.alert(data.message, {
+                        icon: 5,
+                        title: "提示"
+                    });
+                }
+            })
+            return false;
+        })
+    });
 
 </script>
 

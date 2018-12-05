@@ -14,4 +14,7 @@ public interface LoginService {
     boolean checkUser(User user);
 
     User selectUserByEmail(String email);
+
+    void updateUserTicket(String email, String ticket) throws ZxException;
+
 }
