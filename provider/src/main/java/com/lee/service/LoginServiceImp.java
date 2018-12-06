@@ -1,6 +1,7 @@
 package com.lee.service;
 
 import com.lee.api.LoginService;
+import com.lee.constant.ZxException;
 import com.lee.dao.ZxDao;
 import com.lee.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,5 @@ public class LoginServiceImp implements LoginService {
         if (i != 1) {
             throw new ZxException("ticket信息修改异常" + i);
         }
-
     }
 }

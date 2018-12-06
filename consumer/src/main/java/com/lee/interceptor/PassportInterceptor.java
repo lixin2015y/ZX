@@ -41,13 +41,14 @@ public class PassportInterceptor implements HandlerInterceptor {
             }
         }
 
-        ValueOperations<String, User> valueOperations = redisTemplate.opsForValue();
+
 
         if (ticket != null) {
             logger.info("存在ticket");
             //查询redis验证ticket
             if (redisTemplate.hasKey(ticket)) {
                 logger.info("redis中ticket匹配");
+                ValueOperations<String, User> valueOperations = redisTemplate.opsForValue();
                 hostHolder.setUser(valueOperations.get(ticket));
             } else {
                 response.sendRedirect("/html/user/login.html");
