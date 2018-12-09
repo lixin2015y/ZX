@@ -11,6 +11,8 @@
 
     <artifactId>consumer</artifactId>
 
+    <packaging>war</packaging>
+
     <dependencies>
 
         <dependency>
