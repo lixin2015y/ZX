@@ -14,7 +14,7 @@
 
 <div class="fly-header layui-bg-black">
   <div class="layui-container">
-    <a class="fly-logo" href="/">
+    <a class="fly-logo" href="../jie/index.html">
       <img src="../../res/images/logo.png" alt="layui">
     </a>
     <ul class="layui-nav fly-nav layui-hide-xs">
@@ -28,8 +28,21 @@
         <a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>
       </li>
     </ul>
-    
-    <div id="user_view"></div>
+
+    <div id="user_view">
+      <ul class="layui-nav fly-nav-user">
+        <!-- 未登入的状态 -->
+        <li class="layui-nav-item">
+          <a class="iconfont icon-touxiang layui-hide-xs" href="user/login.html"></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="./login.html">登入</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="./reg.html">注册</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -109,10 +122,8 @@
 
 <script src="../../res/layui/layui.js"></script>
 <script type="text/javascript" src="../../res/jquery-1.7.2.min.js"></script>
-
 <script id="user_tmp" type="text/html">
   <ul class="layui-nav fly-nav-user">
-    <!-- 登入后的状态 -->
     <li class="layui-nav-item">
       <a class="fly-nav-avatar" href="javascript:;">
         <cite class="layui-hide-xs">{{d.username}}</cite>
@@ -127,47 +138,52 @@
         <dd><a href="../user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
         </dd>
         <hr style="margin: 5px 0;">
-        <dd><a href="/login/logout" style="text-align: center;">退出</a></dd>
+        <dd><a onclick="logout()" style="text-align: center;cursor: pointer">退出</a></dd>
       </dl>
     </li>
   </ul>
 </script>
 
 <script>
-    let user = layui.data('user');
-    if (user.user == undefined) {
+
+    $(function () {
+        user_info();
+    })
+
+    function user_info() {
         $.ajax(address + '/login/getUserInfoByTicket', {
             type: 'POST',
             dataType: 'json'
         }).done(function (data) {
-            layui.data('user', {
-                key: 'user',
-                value: data.data
-            });
-            user = layui.data('user').user;
-
+            console.log("执行当前函数");
             //渲染
             layui.use('laytpl', function () {
                 let laytpl = layui.laytpl;
-                let user_view = document.getElementById("user_view");
-                let user_tmp = document.getElementById("user_tmp").innerHTML;
-                laytpl(user_tmp).render(user, function (html) {
-                    user_view.innerHTML = html;
-                });
+                if (data.data != undefined) {
+                    let user_view = document.getElementById("user_view");
+                    let user_tmp = document.getElementById("user_tmp").innerHTML;
+                    laytpl(user_tmp).render(data.data, function (html) {
+                        user_view.innerHTML = html;
+                    });
+                    layui.use('element', function () {
+                        let element = layui.element;
+                        element.init();
+                    });
+                }
             })
         })
-    } else {
-        //渲染
-        layui.use('laytpl', function () {
-            let laytpl = layui.laytpl;
-            let user_view = document.getElementById("user_view");
-            let user_tmp = document.getElementById("user_tmp").innerHTML;
-            laytpl(user_tmp).render(user.user, function (html) {
-                user_view.innerHTML = html;
-            });
+    }
+
+    function logout() {
+        $.ajax(address + '/login/logout', {
+            type: 'POST',
+            dataType: 'json'
+        }).done(function (data) {
+            window.location.reload()
         })
     }
 </script>
+
 
 
 </body>

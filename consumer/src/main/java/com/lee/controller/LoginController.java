@@ -14,9 +14,7 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -122,41 +120,32 @@ public class LoginController {
     }
 
     @PostMapping("getUserInfoByTicket")
-    ResponseMessage getUserInfo(@CookieValue("ticket") String ticket, HttpServletResponse response) {
-
-        User user = new User();
-
+    ResponseMessage getUserInfo(@CookieValue(name = "ticket", required = false) String ticket) {
         if (StringUtils.isBlank(ticket)) {
-            try {
-                response.sendRedirect("/html/user/login.html");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            user = loginService.selectUserByTicket(ticket);
-            if (user == null) {
-                try {
-                    response.sendRedirect("/html/user/login.html");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            return Result.success(null);
         }
-        return Result.success(user);
+        return Result.success(loginService.selectUserByTicket(ticket));
     }
 
 
-    @RequestMapping("logout")
-    ResponseMessage logout(@CookieValue("ticket") String ticket,HttpServletResponse response) {
+    @PostMapping("logout")
+    ResponseMessage logout(@CookieValue("ticket") String ticket) {
+
+
+        logger.info("登出" + ticket);
+
         if (StringUtils.isBlank(ticket)) {
             return Result.error();
         }
-        redisTemplate.delete(ticket);
+
         try {
-            response.sendRedirect("/html/user/login.html");
-        } catch (IOException e) {
-            e.printStackTrace();
+            loginService.updateUserTicketByTicket(ticket);
+        } catch (Exception e) {
+            return Result.error(e.getMessage());
         }
+
+        redisTemplate.delete(ticket);
+
         return Result.success();
     }
 }

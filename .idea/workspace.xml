@@ -2,27 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c917e8be-fae8-47c1-8dfb-5cb1d03ee189" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/lee/api/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/lee/api/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/lee/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/lee/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/consumer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/consumer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/lee/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/lee/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/lee/config/ZxWebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/lee/config/ZxWebConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/lee/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/lee/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/lee/interceptor/PassportInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/lee/interceptor/PassportInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/lee/model/HostHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/activate.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/activate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/forget.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/set.html" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/set.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/layui.js" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/layui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/provider/provider.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/lee/dao/ZxDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/java/com/lee/dao/ZxDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/lee/service/LoginServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/java/com/lee/service/LoginServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/provider/src/main/resources/mapper/ZxMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/resources/mapper/ZxMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/provider/target/" />
@@ -53,59 +51,141 @@
     <session id="-1073027099">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="59" />
+          <entry key="class" value="1" />
+          <entry key="html" value="95" />
           <entry key="iml" value="1" />
-          <entry key="java" value="27" />
-          <entry key="js" value="11" />
+          <entry key="java" value="42" />
+          <entry key="js" value="12" />
           <entry key="md" value="1" />
-          <entry key="xml" value="13" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="59" />
+          <entry key="CLASS" value="1" />
+          <entry key="HTML" value="95" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="27" />
-          <entry key="JavaScript" value="11" />
+          <entry key="JAVA" value="42" />
+          <entry key="JavaScript" value="12" />
           <entry key="Markdown" value="1" />
-          <entry key="XML" value="13" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.45" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="2297" />
-          <entry key="java" value="1164" />
+          <entry key="html" value="3516" />
+          <entry key="java" value="1806" />
           <entry key="js" value="621" />
-          <entry key="xml" value="153" />
+          <entry key="properties" value="3" />
+          <entry key="xml" value="248" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2297" />
-          <entry key="JAVA" value="1164" />
+          <entry key="HTML" value="3516" />
+          <entry key="JAVA" value="1806" />
           <entry key="JavaScript" value="621" />
-          <entry key="XML" value="153" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="248" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+              <folding>
+                <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/message.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/set.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
+            <state relative-caret-position="560">
+              <caret line="20" column="71" lean-forward="true" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="15" column="45" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="51" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#script#3;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/activate.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="17" column="47" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="47" />
+              <folding>
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/forget.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -133,31 +213,34 @@
         <option value="$PROJECT_DIR$/provider/src/main/java/com/lee/Provider.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/lee/constant/a.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/lee/constant/ZxException.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/header.html" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/config/ZxWebConfiguration.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html" />
-        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html" />
         <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/catalog.html" />
-        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/detail.html" />
-        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/activate.html" />
-        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/forget.html" />
         <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/mods/index.js" />
         <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/layui.js" />
-        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/add.html" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/interceptor/PassportInterceptor.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/com/lee/api/LoginService.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/lee/service/LoginServiceImp.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/lee/dao/ZxDao.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/resources/mapper/ZxMapper.xml" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/lee/entity/User.java" />
         <option value="$PROJECT_DIR$/consumer/pom.xml" />
         <option value="$PROJECT_DIR$/api/pom.xml" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/Consumer.java" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/user-nav.html" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/header.html" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/lee/api/LoginService.java" />
+        <option value="$PROJECT_DIR$/provider/src/main/java/com/lee/dao/ZxDao.java" />
+        <option value="$PROJECT_DIR$/provider/src/main/java/com/lee/service/LoginServiceImp.java" />
+        <option value="$PROJECT_DIR$/provider/src/main/resources/mapper/ZxMapper.xml" />
+        <option value="$PROJECT_DIR$/provider/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/config/DefaultPageConfig.java" />
+        <option value="$PROJECT_DIR$/consumer/src/main/java/com/lee/config/ZxWebConfiguration.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/index.html" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/add.html" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/detail.html" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/activate.html" />
         <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/home.html" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/forget.html" />
         <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/index.html" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html" />
         <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/message.html" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html" />
         <option value="$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/set.html" />
       </list>
     </option>
@@ -277,6 +360,16 @@
               <item name="consumer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lee" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -320,6 +413,49 @@
               <item name="html" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lee" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zx" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -334,13 +470,15 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544327661541" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544364759836" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IDEAStation\zx\zx\provider\src\main\resources" />
+      <recent name="E:\IDEAStation\zx\zx\consumer\src\main\resources\webapp\html" />
       <recent name="E:\IDEAStation\zx\zx\consumer\src\main\resources\webapp\res\mods" />
       <recent name="E:\IDEAStation\zx\zx\consumer\src\main\resources\webapp\res" />
     </key>
@@ -414,12 +552,13 @@
       <workItem from="1544025067473" duration="1005000" />
       <workItem from="1544101211195" duration="6517000" />
       <workItem from="1544234453937" duration="22942000" />
-      <workItem from="1544323223406" duration="3913000" />
+      <workItem from="1544323223406" duration="5680000" />
+      <workItem from="1544334928985" duration="16756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34802000" />
+    <option name="totallyTimeSpent" value="53325000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -434,7 +573,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21648793" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2191689" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -444,7 +583,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37021276" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.85390073" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -481,25 +620,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/lee/constant/a.java" />
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/lee/constant/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/api.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -536,54 +656,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/filter.html" />
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/footer.html" />
     <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/res/jquery-1.7.2.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/config/ZxWebConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/header.html" />
     <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/case/case.html" />
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-588">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/catalog.html" />
     <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="368" lean-forward="true" selection-start-line="368" selection-end-line="368" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-129">
-          <caret line="122" column="42" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4399">
-          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -610,58 +692,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/res/mods/jquery.cookie.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/layui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="188" selection-start-line="188" selection-end-line="188" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/interceptor/PassportInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="47" column="63" lean-forward="true" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/lee/api/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/lee/service/LoginServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/lee/dao/ZxDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/resources/mapper/ZxMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="157" column="32" lean-forward="true" selection-start-line="157" selection-start-column="32" selection-end-line="157" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -697,76 +727,254 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/activate.html">
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/user-nav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="137" column="48" selection-start-line="137" selection-start-column="48" selection-end-line="137" selection-end-column="48" />
+        <state relative-caret-position="980">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/forget.html">
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/interceptor/PassportInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="142" selection-start-line="142" selection-end-line="142" />
+        <state relative-caret-position="224">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/filter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/link.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/common/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/lee/dao/ZxDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/resources/mapper/ZxMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="38" column="13" lean-forward="true" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/lee/api/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/res/layui/layui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/lee/service/LoginServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="49" column="24" lean-forward="true" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+          <folding>
+            <element signature="e#1142#1143#0" expanded="true" />
+            <element signature="e#1197#1198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-213">
+          <caret line="126" column="21" selection-start-line="126" selection-start-column="15" selection-end-line="126" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/config/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/config/DefaultPageConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/maven-repository/repository/org/springframework/spring-webmvc/5.0.8.RELEASE/spring-webmvc-5.0.8.RELEASE.jar!/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/maven-repository/repository/org/springframework/spring-webmvc/5.0.8.RELEASE/spring-webmvc-5.0.8.RELEASE-sources.jar!/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1484">
+          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/lee/config/ZxWebConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="38" column="54" lean-forward="true" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="183" selection-start-line="183" selection-end-line="183" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="472" column="32" lean-forward="true" selection-start-line="472" selection-start-column="32" selection-end-line="472" selection-end-column="32" />
+        <state relative-caret-position="448">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding>
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#script#3;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/message.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="136" column="25" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="159" column="28" lean-forward="true" selection-start-line="159" selection-start-column="28" selection-end-line="159" selection-end-column="28" />
-          <folding>
-            <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#script#2;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/home.html">
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="173" column="25" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="25" />
+        <state relative-caret-position="1697">
+          <caret line="63" column="8" lean-forward="true" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
           <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#script#2;n#body#0;n#html#0;n#!!top" />
             <element signature="n#script#3;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3584">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/jie/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="451" selection-start-line="451" selection-end-line="512" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#2;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/activate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="47" />
+          <folding>
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/forget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="15" column="45" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#3;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+          <folding>
+            <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/webapp/html/user/set.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
+        <state relative-caret-position="560">
+          <caret line="20" column="71" lean-forward="true" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
         </state>
       </provider>
     </entry>

@@ -49,4 +49,12 @@ public class LoginServiceImp implements LoginService {
     public User selectUserByTicket(String ticket) {
         return zxDao.selectUserByTicket(ticket);
     }
+
+    public void updateUserTicketByTicket(String ticket) throws ZxException {
+
+        if (zxDao.updateUserTicketByTicket(ticket) != 1) {
+            throw new ZxException("更新ticket失败");
+        }
+    }
+
 }

@@ -33,4 +33,8 @@
     <select id="selectUserByTicket" resultType="com.lee.entity.User">
         select id,email,username,headurl,jointime,city,sign from user where ticket = #{ticket}
     </select>
+
+    <update id="updateUserTicketByTicket" parameterType="java.lang.String">
+        update user set ticket = '' where ticket = #{ticket}
+    </update>
 </mapper>

@@ -20,4 +20,6 @@ public interface LoginService {
 
     User selectUserByTicket(String ticket);
 
+    void updateUserTicketByTicket(String ticket) throws ZxException;
+
 }

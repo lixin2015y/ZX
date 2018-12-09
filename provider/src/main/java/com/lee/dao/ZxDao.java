@@ -16,4 +16,6 @@ public interface ZxDao {
     int updateUserTicket(@Param("email") String email, @Param("ticket") String ticket);
 
     User selectUserByTicket(String ticket);
+
+    int updateUserTicketByTicket(String ticket);
 }
