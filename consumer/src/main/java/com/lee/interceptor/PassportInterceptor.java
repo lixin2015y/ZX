@@ -1,7 +1,6 @@
 package com.lee.interceptor;
 
 import com.lee.entity.User;
-import com.lee.model.HostHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class PassportInterceptor implements HandlerInterceptor {
     @Autowired
     RedisTemplate redisTemplate;
 
-    @Autowired
-    HostHolder hostHolder;
-
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -36,8 +32,8 @@ public class PassportInterceptor implements HandlerInterceptor {
             for (Cookie cookie : request.getCookies()) {
                 if (cookie.getName().equals("ticket")) {
                     ticket = cookie.getValue();
-                    break;
-                }
+
+                }break;
             }
         }
 
@@ -45,11 +41,9 @@ public class PassportInterceptor implements HandlerInterceptor {
 
         if (ticket != null) {
             logger.info("存在ticket");
-            //查询redis验证ticket
             if (redisTemplate.hasKey(ticket)) {
                 logger.info("redis中ticket匹配");
                 ValueOperations<String, User> valueOperations = redisTemplate.opsForValue();
-                hostHolder.setUser(valueOperations.get(ticket));
             } else {
                 response.sendRedirect("/html/user/login.html");
                 return false;
@@ -66,6 +60,5 @@ public class PassportInterceptor implements HandlerInterceptor {
     }
 
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        hostHolder.clear();
     }
 }

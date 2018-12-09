@@ -28,25 +28,7 @@
         <a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>
       </li>
     </ul>
-    
-    <ul class="layui-nav fly-nav-user">
-      <!-- 登入后的状态 -->
-      <li class="layui-nav-item">
-        <a class="fly-nav-avatar" href="javascript:;">
-          <cite class="layui-hide-xs">贤心</cite>
-          <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i>
-          <i class="layui-badge fly-badge-vip layui-hide-xs">VIP3</i>
-          <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">
-        </a>
-        <dl class="layui-nav-child">
-          <dd><a href="../user/set.html"><i class="layui-icon">&#xe620;</i>基本设置</a></dd>
-          <dd><a href="../user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a></dd>
-          <dd><a href="../user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a></dd>
-          <hr style="margin: 5px 0;">
-          <dd><a href="" style="text-align: center;">退出</a></dd>
-        </dl>
-      </li>
-    </ul>
+    <div id="user_view"></div>
   </div>
 </div>
 
@@ -147,7 +129,64 @@
 </div>
 
 <script src="../../res/layui/layui.js"></script>
+<script type="text/javascript" src="../../res/jquery-1.7.2.min.js"></script>
+<script id="user_tmp" type="text/html">
+  <ul class="layui-nav fly-nav-user">
+    <!-- 登入后的状态 -->
+    <li class="layui-nav-item">
+      <a class="fly-nav-avatar" href="javascript:;">
+        <cite class="layui-hide-xs">{{d.username}}</cite>
+        <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i>
+        <i class="layui-badge fly-badge-vip layui-hide-xs">VIP</i>
+        <img src="{{d.headurl}}">
+      </a>
+      <dl class="layui-nav-child">
+        <dd><a href="../user/set.html"><i class="layui-icon">&#xe620;</i>基本设置</a></dd>
+        <dd><a href="../user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a>
+        </dd>
+        <dd><a href="../user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
+        </dd>
+        <hr style="margin: 5px 0;">
+        <dd><a href="/login/logout" style="text-align: center;">退出</a></dd>
+      </dl>
+    </li>
+  </ul>
+</script>
+<script>
+    let user = layui.data('user');
+    if (user.user == undefined) {
+        $.ajax(address + '/login/getUserInfoByTicket', {
+            type: 'POST',
+            dataType: 'json'
+        }).done(function (data) {
+            layui.data('user', {
+                key: 'user',
+                value: data.data
+            });
+            user = layui.data('user').user;
 
+            //渲染
+            layui.use('laytpl', function () {
+                let laytpl = layui.laytpl;
+                let user_view = document.getElementById("user_view");
+                let user_tmp = document.getElementById("user_tmp").innerHTML;
+                laytpl(user_tmp).render(user, function (html) {
+                    user_view.innerHTML = html;
+                });
+            })
+        })
+    } else {
+        //渲染
+        layui.use('laytpl', function () {
+            let laytpl = layui.laytpl;
+            let user_view = document.getElementById("user_view");
+            let user_tmp = document.getElementById("user_tmp").innerHTML;
+            laytpl(user_tmp).render(user.user, function (html) {
+                user_view.innerHTML = html;
+            });
+        })
+    }
+</script>
 
 </body>
 </html>

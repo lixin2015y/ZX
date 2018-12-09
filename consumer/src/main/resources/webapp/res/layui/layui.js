@@ -180,16 +180,13 @@ layui.config({
     version: "3.0.0"
     , base: '../../res/mods/'
 }).extend({
-    fly: 'index',
-    jquery_cookie: 'jquery.cookie'
+    fly: 'index'
 }).use(['fly', 'face'], function () {
     let $ = layui.$, fly = layui.fly;
 });
 
 
-let user = layui.data('user')
-if (user.email == undefined) {
 
-    layui.data('user', {})
-}
+
+
 

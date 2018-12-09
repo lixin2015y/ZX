@@ -45,4 +45,8 @@ public class LoginServiceImp implements LoginService {
             throw new ZxException("ticket信息修改异常" + i);
         }
     }
+
+    public User selectUserByTicket(String ticket) {
+        return zxDao.selectUserByTicket(ticket);
+    }
 }

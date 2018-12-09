@@ -4,7 +4,6 @@ import com.lee.api.LoginService;
 import com.lee.constant.ResponseMessage;
 import com.lee.constant.Result;
 import com.lee.entity.User;
-import com.lee.model.HostHolder;
 import com.lee.utils.Utils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -12,13 +11,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -37,9 +35,6 @@ public class LoginController {
 
     @Autowired
     LoginService loginService;
-
-    @Autowired
-    HostHolder hostHolder;
 
     @PostMapping("register")
     public ResponseMessage register(@RequestBody User user, HttpServletResponse response) {
@@ -112,7 +107,7 @@ public class LoginController {
 
         ValueOperations<String, User> valueOperations = redisTemplate.opsForValue();
 
-        valueOperations.set(ticket, user, 3600 * 24 * 5, TimeUnit.SECONDS);
+        valueOperations.set(ticket, u, 3600 * 24 * 5, TimeUnit.SECONDS);
 
         Cookie cookie = new Cookie("ticket", ticket);
 
@@ -127,10 +122,41 @@ public class LoginController {
     }
 
     @PostMapping("getUserInfoByTicket")
-    ResponseMessage getUserInfo() {
-        return Result.success(hostHolder.getUser());
+    ResponseMessage getUserInfo(@CookieValue("ticket") String ticket, HttpServletResponse response) {
+
+        User user = new User();
+
+        if (StringUtils.isBlank(ticket)) {
+            try {
+                response.sendRedirect("/html/user/login.html");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            user = loginService.selectUserByTicket(ticket);
+            if (user == null) {
+                try {
+                    response.sendRedirect("/html/user/login.html");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return Result.success(user);
     }
 
 
-
+    @RequestMapping("logout")
+    ResponseMessage logout(@CookieValue("ticket") String ticket,HttpServletResponse response) {
+        if (StringUtils.isBlank(ticket)) {
+            return Result.error();
+        }
+        redisTemplate.delete(ticket);
+        try {
+            response.sendRedirect("/html/user/login.html");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return Result.success();
+    }
 }

@@ -1,5 +1,7 @@
 package com.lee.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,6 +16,8 @@ public class User implements Serializable {
     private String password;
     private String salt;
     private String headurl;
+
+    @JSONField(format = "yyyy-MM-dd")
     private Date jointime;
     private String city;
     private String sign;
@@ -97,5 +101,21 @@ public class User implements Serializable {
 
     public void setTicket(String ticket) {
         this.ticket = ticket;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", headurl='" + headurl + '\'' +
+                ", jointime=" + jointime +
+                ", city='" + city + '\'' +
+                ", sign='" + sign + '\'' +
+                ", ticket='" + ticket + '\'' +
+                '}';
     }
 }

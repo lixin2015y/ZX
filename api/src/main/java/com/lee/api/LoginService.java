@@ -18,4 +18,6 @@ public interface LoginService {
 
     void updateUserTicket(String email, String ticket) throws ZxException;
 
+    User selectUserByTicket(String ticket);
+
 }
