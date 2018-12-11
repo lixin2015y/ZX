@@ -8,7 +8,7 @@ import com.lee.entity.User;
  */
 public interface LoginService {
 
-    boolean checkEmail(String email);
+    boolean checkEmail(String email,String id);
 
     void addUser(User user);
 

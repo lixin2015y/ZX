@@ -41,7 +41,7 @@ public class LoginController {
             return Result.error("必要参数为空");
         }
 
-        if (loginService.checkEmail(user.getEmail())) {
+        if (loginService.checkEmail(user.getEmail(),null)) {
             return Result.error("用户已被注册");
         }
 
@@ -85,7 +85,7 @@ public class LoginController {
             return Result.error("必要参数为空");
         }
 
-        if (!loginService.checkEmail(user.getEmail())) {
+        if (!loginService.checkEmail(user.getEmail(),null)) {
             return Result.error("该邮箱不存在");
         }
 

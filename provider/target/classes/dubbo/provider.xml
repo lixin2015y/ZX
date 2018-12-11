@@ -16,5 +16,7 @@
     <dubbo:protocol name="dubbo" port="20880" />
 
     <!--暴露服务定义服务元信息-->
-    <dubbo:service interface="com.lee.api.LoginService" ref="loginServiceImp"/>
+    <dubbo:service interface="com.lee.api.LoginService" ref="loginServiceImpl"/>
+
+    <dubbo:service interface="com.lee.api.UserService" ref="userServiceImpl"/>
 </beans>

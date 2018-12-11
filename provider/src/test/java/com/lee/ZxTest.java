@@ -1,6 +1,6 @@
 package com.lee;
 
-import com.lee.dao.ZxDao;
+import com.lee.dao.UserDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +12,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class ZxTest {
 
     @Autowired
-    ZxDao zxDao;
+    UserDao zxDao;
 
     @Test
     public void test1() {
-        zxDao.checkEmail("1");
+        zxDao.checkEmail("1",null);
     }
 
     @Test

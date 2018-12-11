@@ -16,6 +16,7 @@ public class User implements Serializable {
     private String password;
     private String salt;
     private String headurl;
+    private String sex;
 
     @JSONField(format = "yyyy-MM-dd")
     private Date jointime;
@@ -101,6 +102,14 @@ public class User implements Serializable {
 
     public void setTicket(String ticket) {
         this.ticket = ticket;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     @Override

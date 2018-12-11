@@ -93,48 +93,56 @@
                 <!--<li lay-id="bind">帐号绑定</li>-->
             </ul>
             <div class="layui-tab-content" style="padding: 20px 0;">
-                <div class="layui-form layui-form-pane layui-tab-item layui-show">
-                    <form method="post">
+                <div class="layui-form layui-form-pane layui-tab-item layui-show" id="set_user_info">
+                    <form>
+                        <input class="layui-hide" name="id" value="{{d.id}}">
                         <div class="layui-form-item">
                             <label for="L_email" class="layui-form-label">邮箱</label>
                             <div class="layui-input-inline">
                                 <input type="text" id="L_email" name="email" required lay-verify="email"
-                                       autocomplete="off" value="" class="layui-input">
+                                       autocomplete="off" value="{{d.email}}" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux">如果您在邮箱已激活的情况下，变更了邮箱，需<a href="activate.html"
-                                                                                               style="font-size: 12px; color: #4f99cf;">重新验证邮箱</a>。
+                            <div class="layui-form-mid layui-word-aux">如果您在邮箱已激活的情况下，变更了邮箱，需
+                                <a href="activate.html" style="font-size: 12px; color: #4f99cf;">重新验证邮箱</a>。
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <label for="L_username" class="layui-form-label">昵称</label>
                             <div class="layui-input-inline">
                                 <input type="text" id="L_username" name="username" required lay-verify="required"
-                                       autocomplete="off" value="" class="layui-input">
+                                       autocomplete="off" value="{{d.username}}" class="layui-input">
                             </div>
                             <div class="layui-inline">
                                 <div class="layui-input-inline">
+                                    {{#if(d.sex==='0'){}}
                                     <input type="radio" name="sex" value="0" checked title="男">
                                     <input type="radio" name="sex" value="1" title="女">
+                                    {{# }else{ }}
+                                    <input type="radio" name="sex" value="0" title="男">
+                                    <input type="radio" name="sex" value="1" checked title="女">
+                                    {{#} }}
                                 </div>
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <label for="L_city" class="layui-form-label">城市</label>
                             <div class="layui-input-inline">
-                                <input type="text" id="L_city" name="city" autocomplete="off" value=""
+                                <input type="text" id="L_city" name="city" autocomplete="off" value="{{d.city}}"
                                        class="layui-input">
                             </div>
                         </div>
                         <div class="layui-form-item layui-form-text">
                             <label for="L_sign" class="layui-form-label">签名</label>
                             <div class="layui-input-block">
-                                <textarea placeholder="随便写些什么刷下存在感" id="L_sign" name="sign" autocomplete="off"
-                                          class="layui-textarea" style="height: 80px;"></textarea>
+                            <textarea placeholder="随便写些什么刷下存在感" id="L_sign" name="sign" autocomplete="off"
+                                      class="layui-textarea" style="height: 80px;">{{d.sign}}</textarea>
                             </div>
                         </div>
                         <div class="layui-form-item">
-                            <button class="layui-btn" key="set-mine" lay-filter="*" lay-submit>确认修改</button>
+                            <button class="layui-btn" lay-filter="user_info_update" lay-submit>确认修改
+                            </button>
                         </div>
+                    </form>
                 </div>
 
                 <div class="layui-form layui-form-pane layui-tab-item">
@@ -144,7 +152,8 @@
                             <button type="button" class="layui-btn upload-img">
                                 <i class="layui-icon">&#xe67c;</i>上传头像
                             </button>
-                            <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">
+                            <img id="user_head_url"
+                                 src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">
                             <span class="loading"></span>
                         </div>
                     </div>
@@ -231,7 +240,6 @@
         </li>
     </ul>
 </script>
-
 <script>
 
     $(function () {
@@ -243,16 +251,24 @@
             type: 'POST',
             dataType: 'json'
         }).done(function (data) {
-            console.log("执行当前函数");
             //渲染
             layui.use('laytpl', function () {
                 let laytpl = layui.laytpl;
                 if (data.data != undefined) {
                     let user_view = document.getElementById("user_view");
                     let user_tmp = document.getElementById("user_tmp").innerHTML;
+                    let set_user_info = document.getElementById("set_user_info");
                     laytpl(user_tmp).render(data.data, function (html) {
                         user_view.innerHTML = html;
                     });
+                    laytpl(set_user_info.innerHTML).render(data.data, function (html) {
+                        set_user_info.innerHTML = html;
+                    })
+                    document.getElementById("user_head_url").src = data.data.headurl;
+                    layui.use('form', function () {
+                        let form = layui.form;
+                        form.render('radio');
+                    })
                     layui.use('element', function () {
                         let element = layui.element;
                         element.init();
@@ -270,6 +286,32 @@
             window.location.reload()
         })
     }
+
+    layui.use('form', function () {
+        let form = layui.form;
+        form.on('submit(user_info_update)', function (data) {
+            alert(JSON.stringify(data.field));
+            $.ajax(address + '/user/updateUserInfo', {
+                type: 'POST',
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(data.field),
+                dataType: 'json',
+            }).done(function (data) {
+                if (data.code == '0') {
+                    layer.alert(data.message, {
+                        icon: 1,
+                        title: "提示"
+                    });
+                } else {
+                    layer.alert(data.message, {
+                        icon: 5,
+                        title: "提示"
+                    });
+                }
+            })
+            return false;
+        })
+    })
 </script>
 </body>
 </html>
