@@ -6,6 +6,8 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -15,10 +17,10 @@ import org.springframework.http.converter.HttpMessageConverter;
  */
 @ImportResource("classpath:dubbo/consumer.xml")
 @SpringBootApplication
-public class Consumer {
+public class Consumer extends SpringBootServletInitializer {
 
     @Bean
-    public HttpMessageConverters fastJsonHttpMessageConverters(){
+    public HttpMessageConverters fastJsonHttpMessageConverters() {
         //1. 需要定义一个converter转换消息的对象
         FastJsonHttpMessageConverter fasHttpMessageConverter = new FastJsonHttpMessageConverter();
 
@@ -30,6 +32,12 @@ public class Consumer {
         fasHttpMessageConverter.setFastJsonConfig(fastJsonConfig);
         HttpMessageConverter<?> converter = fasHttpMessageConverter;
         return new HttpMessageConverters(converter);
+    }
+
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(Consumer.class);
     }
 
     public static void main(String[] args) {

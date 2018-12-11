@@ -1,0 +1,5 @@
+com\lee\controller\LoginController.class
+com\lee\interceptor\PassportInterceptor.class
+com\lee\config\RedisConfig.class
+com\lee\Consumer.class
+com\lee\config\ZxWebConfiguration.class
