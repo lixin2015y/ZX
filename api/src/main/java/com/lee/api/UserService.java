@@ -10,4 +10,6 @@ public interface UserService {
 
     void updateUserInfo(User user) throws ZxException;
 
+    void updateUserHeadUrl(User user) throws ZxException;
+
 }

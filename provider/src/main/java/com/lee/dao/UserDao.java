@@ -20,4 +20,6 @@ public interface UserDao {
     int updateUserTicketByTicket(String ticket);
 
     int updateUserInfo(User user);
+
+    int updateUserHeadUrl(User user);
 }

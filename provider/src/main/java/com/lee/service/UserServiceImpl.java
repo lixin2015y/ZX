@@ -22,4 +22,10 @@ public class UserServiceImpl implements UserService {
             throw new ZxException("删除数据异常");
         }
     }
+
+    public void updateUserHeadUrl(User user) throws ZxException {
+        if (userDao.updateUserHeadUrl(user)!=1){
+            throw new ZxException("修改数据错误");
+        }
+    }
 }

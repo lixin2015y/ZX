@@ -95,7 +95,7 @@
             <div class="layui-tab-content" style="padding: 20px 0;">
                 <div class="layui-form layui-form-pane layui-tab-item layui-show" id="set_user_info">
                     <form>
-                        <input class="layui-hide" name="id" value="{{d.id}}">
+                        <input class="layui-hide" type="text" name="id" value="{{d.id}}">
                         <div class="layui-form-item">
                             <label for="L_email" class="layui-form-label">邮箱</label>
                             <div class="layui-input-inline">
@@ -149,7 +149,7 @@
                     <div class="layui-form-item">
                         <div class="avatar-add">
                             <p>建议尺寸168*168，支持jpg、png、gif，最大不能超过50KB</p>
-                            <button type="button" class="layui-btn upload-img">
+                            <button type="button" class="layui-btn upload-img" id="upload_head">
                                 <i class="layui-icon">&#xe67c;</i>上传头像
                             </button>
                             <img id="user_head_url"
@@ -244,8 +244,34 @@
 
     $(function () {
         user_info();
+        layui.use('upload', function () {
+            let upload = layui.upload;
+            upload.render({
+                elem: '#upload_head' //绑定元素
+                , url: address + '/user/updateUserHeadUrl' //上传接口
+                , done: function (data) {
 
+                    if (data.code == '0') {
+                        layer.alert('上传成功', {
+                            icon: 1,
+                            title: "提示"
+                        });
+                        user_info();
+                    } else {
+                        layer.alert(data.message, {
+                            icon: 5,
+                            title: "提示"
+                        });
+                    }
+                }
+                , error: function () {
+                    //请求异常回调
+                }
+            });
+
+        })
     })
+
 
     function user_info() {
         $.ajax(address + '/login/getUserInfoByTicket', {
@@ -265,7 +291,6 @@
                     laytpl(set_user_info.innerHTML).render(data.data, function (html) {
                         set_user_info.innerHTML = html;
                     })
-                    console.log(data.data.headurl + "===");
                     if (data.data.headurl != '' && data.data.headurl != undefined) {
                         document.getElementById("user_head_url").src = data.data.headurl;
                     }

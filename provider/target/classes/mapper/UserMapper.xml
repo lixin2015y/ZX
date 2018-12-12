@@ -60,4 +60,8 @@
         </if>
         where id = #{id}
     </update>
+
+    <update id="updateUserHeadUrl" parameterType="com.lee.entity.User">
+        update user set headurl = #{headurl} where ticket = #{ticket}
+    </update>
 </mapper>
