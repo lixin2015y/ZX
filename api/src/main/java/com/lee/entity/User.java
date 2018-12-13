@@ -9,19 +9,30 @@ import java.util.Date;
  * @author lee
  */
 public class User implements Serializable {
+
     private static final long serialVersionUID = 2301638513009320157L;
+
     private String id;
+
     private String email;
+
     private String username;
+
     private String password;
+
     private String salt;
+
     private String headurl;
+
     private String sex;
 
     @JSONField(format = "yyyy-MM-dd")
     private Date jointime;
+
     private String city;
+
     private String sign;
+
     private String ticket;
 
     public String getId() {
@@ -121,6 +132,7 @@ public class User implements Serializable {
                 ", password='" + password + '\'' +
                 ", salt='" + salt + '\'' +
                 ", headurl='" + headurl + '\'' +
+                ", sex='" + sex + '\'' +
                 ", jointime=" + jointime +
                 ", city='" + city + '\'' +
                 ", sign='" + sign + '\'' +

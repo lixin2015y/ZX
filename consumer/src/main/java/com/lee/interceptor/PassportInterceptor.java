@@ -1,6 +1,9 @@
 package com.lee.interceptor;
 
+import com.lee.api.LoginService;
+import com.lee.api.UserService;
 import com.lee.entity.User;
+import com.lee.model.HostHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,12 @@ public class PassportInterceptor implements HandlerInterceptor {
     @Autowired
     RedisTemplate redisTemplate;
 
+    @Autowired
+    HostHolder hostHolder;
+
+    @Autowired
+    UserService userService;
+
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -32,18 +41,23 @@ public class PassportInterceptor implements HandlerInterceptor {
             for (Cookie cookie : request.getCookies()) {
                 if (cookie.getName().equals("ticket")) {
                     ticket = cookie.getValue();
-
-                }break;
+                }
+                break;
             }
         }
-
 
 
         if (ticket != null) {
             logger.info("存在ticket");
             if (redisTemplate.hasKey(ticket)) {
                 logger.info("redis中ticket匹配");
-                ValueOperations<String, User> valueOperations = redisTemplate.opsForValue();
+                User user = userService.selectUserTotalInfoByTicket(ticket);
+                if (user != null) {
+                    hostHolder.setUser(user);
+                } else {
+                    response.sendRedirect("/html/user/login.html");
+                    return false;
+                }
             } else {
                 response.sendRedirect("/html/user/login.html");
                 return false;
@@ -60,5 +74,8 @@ public class PassportInterceptor implements HandlerInterceptor {
     }
 
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        if (hostHolder.getUser() != null) {
+            hostHolder.clear();
+        }
     }
 }

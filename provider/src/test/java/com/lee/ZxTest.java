@@ -24,6 +24,10 @@ public class ZxTest {
         System.out.println(zxDao.selectUserByEmail("sad"));
     }
 
+    @Test
+    public void test3(){
+
+    }
 
 }
 

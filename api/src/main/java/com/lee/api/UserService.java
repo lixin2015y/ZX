@@ -12,4 +12,6 @@ public interface UserService {
 
     void updateUserHeadUrl(User user) throws ZxException;
 
+    User selectUserTotalInfoByTicket(String ticket);
+
 }

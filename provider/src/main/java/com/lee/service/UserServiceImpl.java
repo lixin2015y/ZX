@@ -24,8 +24,15 @@ public class UserServiceImpl implements UserService {
     }
 
     public void updateUserHeadUrl(User user) throws ZxException {
-        if (userDao.updateUserHeadUrl(user)!=1){
+        if (userDao.updateUserHeadUrl(user) != 1) {
             throw new ZxException("修改数据错误");
         }
+    }
+
+    public User selectUserTotalInfoByTicket(String ticket) {
+
+        User user = userDao.selectUserTotalInfoByTicket(ticket);
+
+        return user;
     }
 }

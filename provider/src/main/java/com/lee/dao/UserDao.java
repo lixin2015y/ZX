@@ -22,4 +22,6 @@ public interface UserDao {
     int updateUserInfo(User user);
 
     int updateUserHeadUrl(User user);
+
+    User selectUserTotalInfoByTicket(String ticket);
 }

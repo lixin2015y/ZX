@@ -58,10 +58,20 @@
         <if test="sign!=null and sign !=''">
             sign =#{sign}
         </if>
+        <if test="password!=null and password !=''">
+            password =#{password}
+        </if>
         where id = #{id}
     </update>
 
     <update id="updateUserHeadUrl" parameterType="com.lee.entity.User">
         update user set headurl = #{headurl} where ticket = #{ticket}
     </update>
+
+    <select id="selectUserTotalInfoByTicket" resultType="com.lee.entity.User">
+        select
+        <include refid="userBaseSql"></include>
+        from user
+        where ticket = #{ticket}
+    </select>
 </mapper>
