@@ -16,4 +16,7 @@
 
     <dubbo:reference id="userService" interface="com.lee.api.UserService" check="false"
                      url="dubbo://127.0.0.1:20880/com.lee.api.UserService"></dubbo:reference>
+
+    <dubbo:reference id="newsService" interface="com.lee.api.NewsService" check="false"
+                     url="dubbo://127.0.0.1:20880/com.lee.api.NewsService"></dubbo:reference>
 </beans>

@@ -1,0 +1,62 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.dao.NewsDao">
+    <sql id="baseSql">
+        <if test="id != null and id != ''">
+            id,
+        </if>
+        <if test="newstype != null and newstype != ''">
+            newstype,
+        </if>
+        <if test="content != null and content != ''">
+            content,
+        </if>
+        <if test="totop != null and totop != ''">
+            totop,
+        </if>
+        <if test="tofine != null and tofine != ''">
+            tofine,
+        </if>
+        <if test="userid != null and userid != ''">
+            userid,
+        </if>
+        <if test="creationtime != null">
+            creationtime
+        </if>
+    </sql>
+
+    <resultMap id="baseResult" type="com.lee.entity.News">
+        <id column="id" property="id"></id>
+        <result column="creationtime" property="creationtime"></result>
+    </resultMap>
+
+    <insert id="addNews" parameterType="com.lee.entity.News">
+        insert into news(<include refid="baseSql"></include>)
+        values(
+        <if test="id != null and id != ''">
+            #{id},
+        </if>
+        <if test="newstype != null and newstype != ''">
+            #{newstype},
+        </if>
+        <if test="content != null and content != ''">
+            #{content},
+        </if>
+        <if test="totop != null and totop != ''">
+            #{totop},
+        </if>
+        <if test="tofine != null and tofine != ''">
+            #{tofine},
+        </if>
+        <if test="userid != null and userid != ''">
+            #{userid},
+        </if>
+        <if test="creationtime != null">
+            #{creationtime}
+        </if>)
+    </insert>
+
+    <select id="selectNews" resultMap="baseResult">
+        select * from news where userid = #{id}
+    </select>
+
+</mapper>

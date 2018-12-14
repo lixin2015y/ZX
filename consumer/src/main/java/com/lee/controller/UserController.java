@@ -4,7 +4,6 @@ import com.lee.api.LoginService;
 import com.lee.api.UserService;
 import com.lee.constant.ResponseMessage;
 import com.lee.constant.Result;
-import com.lee.constant.ZxException;
 import com.lee.entity.User;
 import com.lee.model.HostHolder;
 import com.lee.util.QiniuUtil;

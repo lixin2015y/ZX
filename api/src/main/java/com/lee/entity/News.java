@@ -23,16 +23,14 @@ public class News implements Serializable {
 
     private String content;
 
-    private String pictureurl;
-
     private String totop;
 
     private String tofine;
 
     private String userid;
 
-    @JSONField(format = "yyyy-MM-dd")
-    private Date creaiontime;
+    @JSONField(format = "yyyy-MM-dd HH点mm分")
+    private Date creationtime;
 
 
     public String getId() {
@@ -67,14 +65,6 @@ public class News implements Serializable {
         this.content = content;
     }
 
-    public String getPictureurl() {
-        return pictureurl;
-    }
-
-    public void setPictureurl(String pictureurl) {
-        this.pictureurl = pictureurl;
-    }
-
     public String getTotop() {
         return totop;
     }
@@ -99,12 +89,12 @@ public class News implements Serializable {
         this.userid = userid;
     }
 
-    public Date getCreaiontime() {
-        return creaiontime;
+    public Date getCreationtime() {
+        return creationtime;
     }
 
-    public void setCreaiontime(Date creaiontime) {
-        this.creaiontime = creaiontime;
+    public void setCreationtime(Date creationtime) {
+        this.creationtime = creationtime;
     }
 
     @Override
@@ -114,11 +104,10 @@ public class News implements Serializable {
                 ", newstype='" + newstype + '\'' +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", pictureurl='" + pictureurl + '\'' +
                 ", totop='" + totop + '\'' +
                 ", tofine='" + tofine + '\'' +
                 ", userid='" + userid + '\'' +
-                ", creaiontime=" + creaiontime +
+                ", creaiontime=" + creationtime +
                 '}';
     }
 }

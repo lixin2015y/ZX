@@ -4,9 +4,6 @@ import java.io.Serializable;
 
 /**
  * @author lee
- * @version 1.0
- * @date 2018/12/13 15:38
- * @description TODO
  **/
 public class ResetPasswordVo implements Serializable {
 

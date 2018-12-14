@@ -49,7 +49,7 @@
     <div class="fly-panel" pad20 style="padding-top: 5px;">
         <!--<div class="fly-none">没有权限</div>-->
         <div class="layui-form layui-form-pane">
-            <div class="layui-tab layui-tab-brief" lay-filter="user">
+            <div class="layui-tab layui-tab-brief">
                 <ul class="layui-tab-title">
                     <li class="layui-this">发表新帖<!-- 编辑帖子 --></li>
                 </ul>
@@ -60,7 +60,7 @@
                                 <div class="layui-col-md3">
                                     <label class="layui-form-label">所在专栏</label>
                                     <div class="layui-input-block">
-                                        <select lay-verify="required" name="class" lay-filter="column">
+                                        <select name="newstype">
                                             <option value="0">提问</option>
                                             <option value="1">分享</option>
                                             <option value="2">讨论</option>
@@ -80,13 +80,14 @@
                             </div>
                             <div class="layui-form-item layui-form-text">
                                 <div class="layui-input-block">
-                                    <textarea id="L_content" name="content" required lay-verify="required"
+                                    <textarea id="L_content" name="content"
                                               placeholder="详细描述" class="layui-textarea"
                                               style="height: 260px;"></textarea>
                                 </div>
                             </div>
                             <div class="layui-form-item">
-                                <button class="layui-btn" lay-filter="*" lay-submit>立即发布</button>
+                                <button type="button" class="layui-btn" lay-filter="add_news_btn" lay-submit>立即发布
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -163,13 +164,14 @@
     function text_area_show() {
         layui.use('layedit', function () {
             let layedit = layui.layedit;
-            layedit.build('L_content', {
+            layedit.set({
                 uploadImage: {
-                    url: address+'/news/addNews',
-                    type: ''
-
+                    url: address + '/news/addNewsPicture',
+                    type: 'POST',
+                    accept: 'images',
                 }
-            }); //建立编辑器
+            });
+            window.index = layedit.build('L_content', {}); //建立编辑器
         })
     }
 
@@ -181,6 +183,42 @@
             window.location.reload()
         })
     }
+
+    layui.use('form', function () {
+        let form = layui.form;
+        form.on('submit(add_news_btn)', function (data) {
+            layui.use('layedit', function () {
+                let layedit = layui.layedit;
+                layedit.sync(window.index);
+            });
+            data.field.content = $('#L_content').val();
+            if (data.field.content == '') {
+                layer.msg('必填参数不能为空', {icon: 5, shift: 6});
+            } else {
+                let load_index = layer.load(0, {shade: [0.2, '#393D49']});
+                $.ajax(address + '/news/addNews', {
+                    type: 'POST',
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(data.field),
+                    dataType: 'json'
+                }).done(function (data) {
+                    layer.close(load_index);
+                    if (data.code == '0') {
+                        layer.alert(data.message, {
+                            icon: 1,
+                            title: "提示"
+                        });
+                        window.location = '../user/index.html';
+                    } else {
+                        layer.alert(data.message, {
+                            icon: 5,
+                            title: "提示"
+                        });
+                    }
+                })
+            }
+        })
+    })
 </script>
 <script>
 
