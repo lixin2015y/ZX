@@ -7,6 +7,9 @@
         <if test="newstype != null and newstype != ''">
             newstype,
         </if>
+        <if test="title != null and title != ''">
+            title,
+        </if>
         <if test="content != null and content != ''">
             content,
         </if>
@@ -26,6 +29,11 @@
 
     <resultMap id="baseResult" type="com.lee.entity.News">
         <id column="id" property="id"></id>
+        <result column="newstype" property="newstype"></result>
+        <result column="content" property="content"></result>
+        <result column="totop" property="totop"></result>
+        <result column="tofine" property="tofine"></result>
+        <result column="userid" property="userid"></result>
         <result column="creationtime" property="creationtime"></result>
     </resultMap>
 
@@ -37,6 +45,9 @@
         </if>
         <if test="newstype != null and newstype != ''">
             #{newstype},
+        </if>
+        <if test="title != null and title != ''">
+            #{title},
         </if>
         <if test="content != null and content != ''">
             #{content},
@@ -55,8 +66,25 @@
         </if>)
     </insert>
 
-    <select id="selectNews" resultMap="baseResult">
-        select * from news where userid = #{id}
+
+    <resultMap id="selectUserNewsMap" type="com.lee.vo.UserNewsVo">
+        <id column="id" property="id"></id>
+        <result column="newstype" property="newstype"></result>
+        <result column="content" property="content"></result>
+        <result column="totop" property="totop"></result>
+        <result column="tofine" property="tofine"></result>
+        <result column="userid" property="userid"></result>
+        <result column="creationtime" property="creationtime"></result>
+        <result column="commentcount" property="commentcount"></result>
+    </resultMap>
+    <select id="selectUserNews" resultMap="selectUserNewsMap">
+        SELECT
+	        news.*, count(`comment`.id) commentcount
+        FROM
+            news
+        LEFT JOIN `comment` ON `comment`.entityid = news.id
+        WHERE
+            news.userid = #{useid}
     </select>
 
 </mapper>

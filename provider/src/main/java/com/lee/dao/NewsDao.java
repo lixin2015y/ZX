@@ -1,6 +1,7 @@
 package com.lee.dao;
 
 import com.lee.entity.News;
+import com.lee.vo.UserNewsVo;
 
 import java.util.List;
 
@@ -11,5 +12,5 @@ public interface NewsDao {
 
     int addNews(News news);
 
-    List<News> selectNews(String id);
+    List<UserNewsVo> selectUserNews(String userid);
 }

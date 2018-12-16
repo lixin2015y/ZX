@@ -2,6 +2,7 @@ package com.lee.api;
 
 import com.lee.constant.ZxException;
 import com.lee.entity.News;
+import com.lee.vo.UserNewsVo;
 
 import java.util.List;
 
@@ -15,6 +16,6 @@ public interface NewsService {
 
     void addNews(News news) throws ZxException;
 
-    List<News> selectNews(String id);
+    List<UserNewsVo> selectUserNews(String id);
 
 }

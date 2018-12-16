@@ -9,6 +9,7 @@ import com.lee.model.HostHolder;
 import com.lee.util.QiniuUtil;
 import com.lee.util.ZxUtil;
 import com.lee.utils.Utils;
+import com.lee.vo.UserNewsVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,10 +79,10 @@ public class NewsController {
         return Result.error();
     }
 
-    @PostMapping("selectNews")
-    ResponseMessage selectNews() {
-        List<News> newsList = newsService.selectNews(hostHolder.getUser().getId());
-        return Result.success(newsList);
+    @PostMapping("getUserNews")
+    ResponseMessage getUserNews() {
+        List<UserNewsVo> userNewsVoList = newsService.selectUserNews(hostHolder.getUser().getId());
+        return Result.success(userNewsVoList);
     }
 
 }
