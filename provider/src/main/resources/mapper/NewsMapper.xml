@@ -79,12 +79,57 @@
     </resultMap>
     <select id="selectUserNews" resultMap="selectUserNewsMap">
         SELECT
-	        news.*, count(`comment`.id) commentcount
+            news.*, count(`comment`.id) commentcount
         FROM
             news
         LEFT JOIN `comment` ON `comment`.entityid = news.id
         WHERE
-            news.userid = #{useid}
+            news.userid = #{userid}
+        GROUP BY
+            news.id
     </select>
 
+
+    <resultMap id="getNewsMap" type="com.lee.vo.NewsVo">
+        <id column="id" property="id"></id>
+        <result column="newstype" property="newstype"></result>
+        <result column="totop" property="totop"></result>
+        <result column="tofine" property="tofine"></result>
+        <result column="userid" property="userid"></result>
+        <result column="creationtime" property="creationtime"></result>
+        <result column="commentcount" property="commentcount"></result>
+        <result column="usernmae" property="username"></result>
+        <result column="headurl" property="headurl"></result>
+    </resultMap>
+    <select id="getNews" parameterType="com.lee.vo.NewsPageVo" resultMap="getNewsMap">
+        SELECT
+            n.id, n.newstype, n.title, n.totop, n.tofine, n.userid, n.creationtime, u.username, u.headurl,
+            COUNT(c.id) AS commentcount
+        FROM
+            news n
+        LEFT JOIN `comment` c ON n.id = c.entityid
+        LEFT JOIN `user` u ON u.id = n.userid
+        WHERE
+        1=1
+        <if test="title != null and title != ''">
+          AND n.title LIKE '%'#{title}'%'
+        </if>
+        <if test="newstype !=null and newstype != ''">
+          AND n.newstype = #{newstype}
+        </if>
+        GROUP BY n.id
+        LIMIT #{begin},#{pageSize}
+    </select>
+
+    <select id="getNewsTotal" parameterType="com.lee.vo.NewsPageVo" resultType="java.lang.Integer">
+        select count(*) from news
+        WHERE
+        1=1
+        <if test="title != null and title != ''">
+            AND n.title LIKE '%'#{title}'%'
+        </if>
+        <if test="newstype !=null and newstype != ''">
+            AND n.newstype = #{newstype}
+        </if>
+    </select>
 </mapper>

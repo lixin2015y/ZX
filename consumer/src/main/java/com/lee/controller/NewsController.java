@@ -9,6 +9,8 @@ import com.lee.model.HostHolder;
 import com.lee.util.QiniuUtil;
 import com.lee.util.ZxUtil;
 import com.lee.utils.Utils;
+import com.lee.vo.NewsPageVo;
+import com.lee.vo.PageVo;
 import com.lee.vo.UserNewsVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,6 +85,12 @@ public class NewsController {
     ResponseMessage getUserNews() {
         List<UserNewsVo> userNewsVoList = newsService.selectUserNews(hostHolder.getUser().getId());
         return Result.success(userNewsVoList);
+    }
+
+    @PostMapping("getNews")
+    ResponseMessage getNews(@RequestBody NewsPageVo newsPageVo) {
+        Map<String, Object> news = newsService.getNews(newsPageVo);
+        return Result.success(news);
     }
 
 }

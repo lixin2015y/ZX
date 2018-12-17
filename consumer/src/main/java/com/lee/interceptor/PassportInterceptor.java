@@ -50,7 +50,7 @@ public class PassportInterceptor implements HandlerInterceptor {
         if (ticket != null) {
             logger.info("存在ticket");
             if (redisTemplate.hasKey(ticket)) {
-                logger.info("redis中ticket匹配");
+                logger.debug("redis中ticket匹配");
                 User user = userService.selectUserTotalInfoByTicket(ticket);
                 if (user != null) {
                     hostHolder.setUser(user);
@@ -63,7 +63,7 @@ public class PassportInterceptor implements HandlerInterceptor {
                 return false;
             }
         } else {
-            logger.info("ticket不存在");
+            logger.debug("ticket不存在");
             response.sendRedirect("/html/user/login.html");
             return false;
         }

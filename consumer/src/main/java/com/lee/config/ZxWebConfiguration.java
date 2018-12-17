@@ -31,13 +31,12 @@ public class ZxWebConfiguration implements WebMvcConfigurer {
         excludePatterns.add("/html/user/reg.html");
         excludePatterns.add("/html/jie/detail.html");
         excludePatterns.add("/html/jie/index.html");
+        excludePatterns.add("/news/getNews");
         registry.addInterceptor(passportInterceptor)
                 .addPathPatterns(addPatterns)
                 .excludePathPatterns(excludePatterns);
     }
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        //registry.addViewController("/").setViewName("/html/jie/index.html");
-        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 }
