@@ -45,16 +45,16 @@
     </div>
 </div>
 
-<div class="fly-panel fly-column">
+<div class="fly-panel">
     <div class="layui-container">
         <ul class="layui-clear">
             <li class="layui-hide-xs"><a href="../jie/index.html">首页</a></li>
-            <li><a href="">提问</a></li>
-            <li><a href="">分享</span></a></li>
-            <li><a href="">讨论</a></li>
-            <li><a href="">建议</a></li>
-            <li><a href="">公告</a></li>
-            <li><a href="">动态</a></li>
+            <li style="cursor: not-allowed">提问</li>
+            <li style="cursor: not-allowed">分享</li>
+            <li style="cursor: not-allowed">讨论</li>
+            <li style="cursor: not-allowed">建议</li>
+            <li style="cursor: not-allowed">公告</li>
+            <li style="cursor: not-allowed">动态</li>
             <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><span class="fly-mid"></span></li>
         </ul>
 
@@ -229,8 +229,12 @@
             </span>
         </div>
         <div class="fly-list-badge">
+            {{# if(item.tofine == 1){ }}
             <span class="layui-badge layui-bg-red">精帖</span>
+            {{# } }}
+            {{# if(item.totop == 1){ }}
             <span class="layui-badge layui-bg-black">置顶</span>
+            {{# } }}
         </div>
     </li>
     {{#  }); }}
@@ -279,22 +283,71 @@
                 pageSize: 10
             })
         }).done(function (data) {
-            layui.use('laytpl', function () {
-                let laytpl = layui.laytpl;
-                if (data.data != undefined) {
-                    let news_info_view = document.getElementById("news_info_view");
-                    let news_info_tmp = document.getElementById("news_info_tmp").innerHTML;
-                    laytpl(news_info_tmp).render(data.data, function (html) {
-                        news_info_view.innerHTML = html;
-                    });
-                    layui.use('element', function () {
-                        let element = layui.element;
-                        element.init();
-                    });
-                }
-
-
+            news_info_show(data.data);
+            layui.use('laypage', function () {
+                let laypage = layui.laypage;
+                laypage.render({
+                    elem: 'user_info_page',
+                    count: data.data.total,
+                    jump: function (obj, first) {
+                        if (!first) {
+                            $.ajax(address + '/news/getNews', {
+                                type: 'POST',
+                                dataType: 'json',
+                                contentType: 'application/json; charset:UTF-8',
+                                data: JSON.stringify({
+                                    pageNum: obj.curr,
+                                    pageSize: obj.limit
+                                })
+                            }).done(function (data) {
+                                news_info_show(data.data);
+                            })
+                        }
+                    }
+                })
             })
+        })
+    }
+
+    function news_info_show(data) {
+        layui.use('laytpl', function () {
+            let laytpl = layui.laytpl;
+            if (data != undefined) {
+                let news_info_view = document.getElementById("news_info_view");
+                let news_info_tmp = document.getElementById("news_info_tmp").innerHTML;
+                for (let i = 0; i < data.list.length; i++) {
+                    switch (data.list[i].newstype) {
+                        case '0':
+                            data.list[i].newstype = '提问';
+                            break;
+                        case '1':
+                            data.list[i].newstype = '分享';
+                            break;
+                        case '2':
+                            data.list[i].newstype = '讨论';
+                            break;
+                        case '3':
+                            data.list[i].newstype = '建议';
+                            break;
+                        case '4':
+                            data.list[i].newstype = '公告';
+                            break;
+                        case '5':
+                            data.list[i].newstype = '动态';
+                            break;
+                        default:
+                            data.list[i].newstype = '未知';
+                            break;
+                    }
+                }
+                laytpl(news_info_tmp).render(data, function (html) {
+                    news_info_view.innerHTML = html;
+                });
+                layui.use('element', function () {
+                    let element = layui.element;
+                    element.init();
+                });
+            }
         })
     }
 

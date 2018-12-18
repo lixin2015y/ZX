@@ -118,6 +118,7 @@
           AND n.newstype = #{newstype}
         </if>
         GROUP BY n.id
+        ORDER BY n.totop DESC,tofine DESC ,creationtime DESC
         LIMIT #{begin},#{pageSize}
     </select>
 
