@@ -19,4 +19,6 @@ public interface NewsDao {
     List<NewsVo> getNews(NewsPageVo newsPageVo);
 
     Integer getNewsTotal(NewsPageVo newsPageVo);
+
+    List<NewsVo> getHotNews();
 }

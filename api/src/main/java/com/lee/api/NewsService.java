@@ -3,6 +3,7 @@ package com.lee.api;
 import com.lee.constant.ZxException;
 import com.lee.entity.News;
 import com.lee.vo.NewsPageVo;
+import com.lee.vo.NewsVo;
 import com.lee.vo.UserNewsVo;
 
 import java.util.List;
@@ -18,5 +19,7 @@ public interface NewsService {
     List<UserNewsVo> selectUserNews(String id);
 
     Map<String, Object> getNews(NewsPageVo newsPageVo);
+
+    List<NewsVo> getHotNews();
 
 }

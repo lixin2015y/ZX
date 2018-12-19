@@ -40,4 +40,8 @@ public class NewsServiceImpl implements NewsService {
         map.put("total", newsDao.getNewsTotal(newsPageVo));
         return map;
     }
+
+    public List<NewsVo> getHotNews() {
+        return newsDao.getHotNews();
+    }
 }

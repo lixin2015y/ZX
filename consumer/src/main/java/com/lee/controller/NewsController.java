@@ -93,4 +93,9 @@ public class NewsController {
         return Result.success(news);
     }
 
+    @PostMapping("getHotNews")
+    ResponseMessage getHotNews() {
+        return Result.success(newsService.getHotNews());
+    }
+
 }

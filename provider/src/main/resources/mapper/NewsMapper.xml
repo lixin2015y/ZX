@@ -133,4 +133,16 @@
             AND n.newstype = #{newstype}
         </if>
     </select>
+
+    <select id="getHotNews" resultMap="getNewsMap">
+        SELECT
+            n.id, n.title,COUNT(c.id) commentcount
+        FROM
+            news n
+        LEFT JOIN `comment` c ON c.entityid = n.id
+        GROUP BY
+            n.id
+        ORDER BY COUNT(c.id) DESC
+        LIMIT 10
+    </select>
 </mapper>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>基于 layui 的极简社区页面模版</title>
+    <title>主界面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="fly,layui,前端社区">
     <meta name="description" content="Fly社区是模块化前端UI框架Layui的官网社区，致力于为web开发提供强劲动力">
@@ -45,16 +45,16 @@
     </div>
 </div>
 
-<div class="fly-panel">
+<div class="fly-panel fly-column">
     <div class="layui-container">
         <ul class="layui-clear">
             <li class="layui-hide-xs"><a href="../jie/index.html">首页</a></li>
-            <li style="cursor: not-allowed">提问</li>
-            <li style="cursor: not-allowed">分享</li>
-            <li style="cursor: not-allowed">讨论</li>
-            <li style="cursor: not-allowed">建议</li>
-            <li style="cursor: not-allowed">公告</li>
-            <li style="cursor: not-allowed">动态</li>
+            <li class="layui-this"><a href="">提问</a></li>
+            <li><a href="">分享<span class="layui-badge-dot"></span></a></li>
+            <li><a href="">讨论</a></li>
+            <li><a href="">建议</a></li>
+            <li><a href="">公告</a></li>
+            <li><a href="">动态</a></li>
             <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><span class="fly-mid"></span></li>
         </ul>
 
@@ -85,47 +85,7 @@
         <div class="layui-col-md4">
             <dl class="fly-panel fly-list-one">
                 <dt class="fly-panel-title">本周热议</dt>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-
+                <div id="hot_news_info_view"></div>
             </dl>
 
             <div class="fly-panel">
@@ -217,7 +177,7 @@
             <a class="layui-badge">
                 {{item.newstype}}
             </a>
-            <a href="detail.html">{{item.title}}</a>
+            <a href="./detail.html?#/id={{item.id}}">{{item.title}}</a>
         </h2>
         <div class="fly-list-info">
             <a href="user/home.html" link>
@@ -242,11 +202,23 @@
     无数据
     {{#  } }}
 </script>
+<script id="hot_news_info_tmp" type="text/html">
+    {{#  layui.each(d, function(index, item){ }}
+        <dd>
+            <a href="./detail.html?#/id={{item.id}}">{{item.title}}</a>
+            <span><i class="iconfont icon-pinglun1"></i> {{item.commentcount}}</span>
+        </dd>
+    {{#  }); }}
+    {{#  if(d.length === 0){ }}
+        无数据
+    {{#  } }}
+</script>
 <script>
 
     $(function () {
         user_info();
         news_info();
+        hot_news_info();
     })
 
     function user_info() {
@@ -254,8 +226,6 @@
             type: 'POST',
             dataType: 'json'
         }).done(function (data) {
-            console.log("执行当前函数");
-            //渲染
             layui.use('laytpl', function () {
                 let laytpl = layui.laytpl;
                 if (data.data != undefined) {
@@ -305,6 +275,28 @@
                         }
                     }
                 })
+            })
+        })
+    }
+
+    function hot_news_info() {
+        $.ajax(address + '/news/getHotNews', {
+            type: 'POST',
+            dataType: 'json'
+        }).done(function (data) {
+            layui.use('laytpl', function () {
+                let laytpl = layui.laytpl;
+                if (data.data != undefined) {
+                    let hot_news_info_view = document.getElementById("hot_news_info_view");
+                    let hot_news_info_tmp = document.getElementById("hot_news_info_tmp").innerHTML;
+                    laytpl(hot_news_info_tmp).render(data.data, function (html) {
+                        hot_news_info_view.innerHTML = html;
+                    });
+                    layui.use('element', function () {
+                        let element = layui.element;
+                        element.init();
+                    });
+                }
             })
         })
     }
