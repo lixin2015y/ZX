@@ -103,19 +103,19 @@
     </resultMap>
     <select id="getNews" parameterType="com.lee.vo.NewsPageVo" resultMap="getNewsMap">
         SELECT
-            n.id, n.newstype, n.title, n.totop, n.tofine, n.userid, n.creationtime, u.username, u.headurl,
-            COUNT(c.id) AS commentcount
+        n.id, n.newstype, n.title, n.totop, n.tofine, n.userid, n.creationtime, u.username, u.headurl,
+        COUNT(c.id) AS commentcount
         FROM
-            news n
+        news n
         LEFT JOIN `comment` c ON n.id = c.entityid
         LEFT JOIN `user` u ON u.id = n.userid
         WHERE
         1=1
         <if test="title != null and title != ''">
-          AND n.title LIKE '%'#{title}'%'
+            AND n.title LIKE '%'#{title}'%'
         </if>
         <if test="newstype !=null and newstype != ''">
-          AND n.newstype = #{newstype}
+            AND n.newstype = #{newstype}
         </if>
         GROUP BY n.id
         ORDER BY n.totop DESC,tofine DESC ,creationtime DESC
@@ -144,5 +144,37 @@
             n.id
         ORDER BY COUNT(c.id) DESC
         LIMIT 10
+    </select>
+
+    <resultMap id="getNewsDetailMap" type="com.lee.vo.NewsDetailVo">
+        <id column="id" property="id"></id>
+        <result column="title" property="title"></result>
+        <result column="content" property="content"></result>
+        <result column="creationtime" property="creationtime"></result>
+        <result column="userid" property="userid"></result>
+        <association property="user">
+            <id column="userid" property="id"></id>
+            <result column="username" property="username"></result>
+            <result column="headurl" property="headurl"></result>
+        </association>
+        <collection property="commentVoList" ofType="id" select="">
+        </collection>
+    </resultMap>
+    <select id="getNewsDetail" parameterType="java.lang.String" resultMap="getNewsDetailMap">
+        SELECT
+            n.*, u.id AS userid, u.username, u.headurl
+        FROM
+            news n,`user` u
+        WHERE
+            u.id = n.userid
+        AND
+            n.id = #{id}
+    </select>
+
+    <resultMap id="selectNewsContentMap" type="com.lee.vo.CommentVo">
+        <id column="id" property="id"></id>
+    </resultMap>
+    <select id="selectNewsContent" parameterType="java.lang.String" resultMap="selectNewsContentMap">
+        select 
     </select>
 </mapper>

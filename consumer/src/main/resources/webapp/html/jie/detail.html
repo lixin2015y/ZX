@@ -242,51 +242,7 @@
         <div class="layui-col-md4">
             <dl class="fly-panel fly-list-one">
                 <dt class="fly-panel-title">本周热议</dt>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-                <dd>
-                    <a href="">基于 layui 的极简社区页面模版</a>
-                    <span><i class="iconfont icon-pinglun1"></i> 16</span>
-                </dd>
-
-                <!-- 无数据时 -->
-                <!--
-                <div class="fly-none">没有相关数据</div>
-                -->
+                <div id="hot_news_info_view"></div>
             </dl>
 
             <div class="fly-panel">
@@ -294,7 +250,7 @@
                     这里可作为广告区域
                 </div>
                 <div class="fly-panel-main">
-                    <a href="http://layim.layui.com/?from=fly" target="_blank" class="fly-zanzhu"
+                    <a href=""  target="_blank" class="fly-zanzhu"
                        time-limit="2017.09.25-2099.01.01" style="background-color: #5FB878;">LayIM 3.0 - layui 旗舰之作</a>
                 </div>
             </div>
@@ -353,15 +309,27 @@
         </li>
     </ul>
 </script>
-
+<script id="hot_news_info_tmp" type="text/html">
+    {{#  layui.each(d, function(index, item){ }}
+    <dd>
+        <a href="./detail.html?#/id={{item.id}}">{{item.title}}</a>
+        <span><i class="iconfont icon-pinglun1"></i> {{item.commentcount}}</span>
+    </dd>
+    {{#  }); }}
+    {{#  if(d.length === 0){ }}
+    无数据
+    {{#  } }}
+</script>
 <script>
     $(function () {
+        //详情页必须制定一条资讯
         let router = layui.router();
         if (router.search.id == undefined) {
             window.location = './index.html';
         } else {
             user_info();
             news_detail_info();
+            hot_news_info();
         }
     });
 
@@ -388,7 +356,29 @@
     }
 
     function news_detail_info() {
-        
+
+    }
+
+    function hot_news_info() {
+        $.ajax(address + '/news/getHotNews', {
+            type: 'POST',
+            dataType: 'json'
+        }).done(function (data) {
+            layui.use('laytpl', function () {
+                let laytpl = layui.laytpl;
+                if (data.data != undefined) {
+                    let hot_news_info_view = document.getElementById("hot_news_info_view");
+                    let hot_news_info_tmp = document.getElementById("hot_news_info_tmp").innerHTML;
+                    laytpl(hot_news_info_tmp).render(data.data, function (html) {
+                        hot_news_info_view.innerHTML = html;
+                    });
+                    layui.use('element', function () {
+                        let element = layui.element;
+                        element.init();
+                    });
+                }
+            })
+        })
     }
 
     function logout() {

@@ -9,9 +9,11 @@ import com.lee.model.HostHolder;
 import com.lee.util.QiniuUtil;
 import com.lee.util.ZxUtil;
 import com.lee.utils.Utils;
+import com.lee.vo.NewsDetailVo;
 import com.lee.vo.NewsPageVo;
 import com.lee.vo.PageVo;
 import com.lee.vo.UserNewsVo;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +28,6 @@ import java.util.Map;
 
 /**
  * @author lee
- * @version 1.0
- * @date 2018/12/13 18:27
- * @description TODO
  **/
 @RequestMapping("news")
 @RestController
@@ -96,6 +95,17 @@ public class NewsController {
     @PostMapping("getHotNews")
     ResponseMessage getHotNews() {
         return Result.success(newsService.getHotNews());
+    }
+
+    @PostMapping("getNewsDetail")
+    ResponseMessage getNewsDetail(String id) {
+
+        if (StringUtils.isBlank(id)) {
+            return Result.error();
+        }
+
+        NewsDetailVo newsDetailVo = newsService.getNewsDetail(id);
+        return Result.success(newsDetailVo);
     }
 
 }

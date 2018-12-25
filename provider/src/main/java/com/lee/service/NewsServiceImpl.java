@@ -4,6 +4,7 @@ import com.lee.api.NewsService;
 import com.lee.constant.ZxException;
 import com.lee.dao.NewsDao;
 import com.lee.entity.News;
+import com.lee.vo.NewsDetailVo;
 import com.lee.vo.NewsPageVo;
 import com.lee.vo.NewsVo;
 import com.lee.vo.UserNewsVo;
@@ -43,5 +44,9 @@ public class NewsServiceImpl implements NewsService {
 
     public List<NewsVo> getHotNews() {
         return newsDao.getHotNews();
+    }
+
+    public NewsDetailVo getNewsDetail(String id) {
+        return newsDao.getNewsDetail(id);
     }
 }

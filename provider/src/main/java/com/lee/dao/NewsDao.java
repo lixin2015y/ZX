@@ -1,6 +1,7 @@
 package com.lee.dao;
 
 import com.lee.entity.News;
+import com.lee.vo.NewsDetailVo;
 import com.lee.vo.NewsPageVo;
 import com.lee.vo.NewsVo;
 import com.lee.vo.UserNewsVo;
@@ -21,4 +22,6 @@ public interface NewsDao {
     Integer getNewsTotal(NewsPageVo newsPageVo);
 
     List<NewsVo> getHotNews();
+
+    NewsDetailVo getNewsDetail(String id);
 }
