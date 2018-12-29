@@ -7,9 +7,6 @@ import java.util.Date;
 
 /**
  * @author lee
- * @version 1.0
- * @date 2018/12/13 16:55
- * @description
  **/
 public class News implements Serializable {
 

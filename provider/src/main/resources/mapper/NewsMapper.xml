@@ -139,7 +139,7 @@
             n.id, n.title,COUNT(c.id) commentcount
         FROM
             news n
-        LEFT JOIN `comment` c ON c.entityid = n.id
+        LEFT JOIN `comment` c ON c.entityid = n.id and entitytype = '1'
         GROUP BY
             n.id
         ORDER BY COUNT(c.id) DESC
@@ -148,33 +148,51 @@
 
     <resultMap id="getNewsDetailMap" type="com.lee.vo.NewsDetailVo">
         <id column="id" property="id"></id>
+        <result column="newstype" property="newstype"></result>
         <result column="title" property="title"></result>
         <result column="content" property="content"></result>
-        <result column="creationtime" property="creationtime"></result>
+        <result column="totop" property="totop"></result>
+        <result column="tofine" property="tofine"></result>
         <result column="userid" property="userid"></result>
-        <association property="user">
-            <id column="userid" property="id"></id>
-            <result column="username" property="username"></result>
-            <result column="headurl" property="headurl"></result>
-        </association>
-        <collection property="commentVoList" ofType="id" select="">
-        </collection>
+        <result column="creationtime" property="creationtime"></result>
+        <result column="headurl" property="headurl"></result>
+        <result column="username" property="username"></result>
     </resultMap>
     <select id="getNewsDetail" parameterType="java.lang.String" resultMap="getNewsDetailMap">
         SELECT
-            n.*, u.id AS userid, u.username, u.headurl
+            news.*,`user`.headurl,`user`.username
         FROM
-            news n,`user` u
+            news,
+            `user`
         WHERE
-            u.id = n.userid
+            `user`.id = news.userid
         AND
-            n.id = #{id}
+         news.id = #{id}
     </select>
 
     <resultMap id="selectNewsContentMap" type="com.lee.vo.CommentVo">
         <id column="id" property="id"></id>
+        <result column="content" property="content"></result>
+        <result column="userid" property="userid"></result>
+        <association property="user" javaType="com.lee.entity.User">
+            <id column="id2" property="id"></id>
+            <result column="username" property="username"></result>
+            <result column="headurl" property="headurl"></result>
+        </association>
+        <collection property="commentVoList">
+            <id column="id1" property="id"></id>
+            <result column="content" property="content"></result>
+            <result column="userid" property="userid"></result>
+        </collection>
     </resultMap>
     <select id="selectNewsContent" parameterType="java.lang.String" resultMap="selectNewsContentMap">
-        select 
+        SELECT
+            *
+        FROM
+            `comment` c1 LEFT JOIN `comment` c2 ON  c1.id = c2.entityid AND c2.entitytype = '2'
+        WHERE
+            c1.entityid = #{id}
+        AND
+        c1.entitytype = '1'
     </select>
 </mapper>

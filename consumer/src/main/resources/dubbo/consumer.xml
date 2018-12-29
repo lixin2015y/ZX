@@ -19,4 +19,7 @@
 
     <dubbo:reference id="newsService" interface="com.lee.api.NewsService" check="false"
                      url="dubbo://127.0.0.1:20880/com.lee.api.NewsService"></dubbo:reference>
+
+    <dubbo:reference id="commentService" interface="com.lee.api.CommentService" check="false"
+                     url="dubbo://127.0.0.1:20880/com.lee.api.CommentService"></dubbo:reference>
 </beans>

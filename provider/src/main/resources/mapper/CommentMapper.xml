@@ -1,0 +1,57 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.dao.CommentDao">
+
+    <resultMap id="baseResultMap" type="com.lee.entity.Comment">
+        <id column="id" property="id"></id>
+        <result column="entityid" property="entityid"></result>
+        <result column="entitytype" property="entitytype"></result>
+        <result column="content" property="content"></result>
+        <result column="userid" property="userid"></result>
+        <result column="creationtime" property="creationtime"></result>
+    </resultMap>
+
+    <resultMap id="getCommentListMap" type="com.lee.vo.CommentVo">
+        <id column="id" property="id"></id>
+        <result column="entityid" property="entityid"></result>
+        <result column="entitytype" property="entitytype"></result>
+        <result column="content" property="content"></result>
+        <result column="userid" property="userid"></result>
+        <result column="creationtime" property="creationtime"></result>
+        <result column="username" property="username"></result>
+        <result column="headurl" property="headurl"></result>
+        <collection property="commentVoList" column="id" select="getCommentList2"></collection>
+    </resultMap>
+
+    <select id="getCommentList" resultMap="getCommentListMap">
+        SELECT
+            c.*, u.headurl,
+            u.username
+        FROM
+            `comment` c
+        LEFT JOIN `user` u ON c.userid = u.id
+        WHERE
+            c.entityid = #{newsId}
+        AND c.entitytype = '1'
+    </select>
+    <resultMap id="getCommentList2Map" type="com.lee.vo.CommentVo">
+        <id column="id" property="id"></id>
+        <result column="entityid" property="entityid"></result>
+        <result column="entitytype" property="entitytype"></result>
+        <result column="content" property="content"></result>
+        <result column="userid" property="userid"></result>
+        <result column="creationtime" property="creationtime"></result>
+        <result column="username" property="username"></result>
+        <result column="headurl" property="headurl"></result>
+    </resultMap>
+    <select id="getCommentList2" resultMap="getCommentList2Map">
+        SELECT
+            c.*, u.headurl,
+            u.username
+        FROM
+            `comment` c
+        LEFT JOIN `user` u ON c.userid = u.id
+        WHERE
+            c.entityid = #{id}
+        AND c.entitytype = '2'
+    </select>
+</mapper>

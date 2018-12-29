@@ -1,32 +1,29 @@
 package com.lee.vo;
 
 import com.lee.entity.News;
-import com.lee.entity.User;
-
-import java.util.List;
 
 /**
  * @author lee
  **/
 public class NewsDetailVo extends News {
 
-    private User user;
+    private String username;
 
-    private List<CommentVo> commentVoList;
+    private String headurl;
 
-    public User getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public List<CommentVo> getCommentVoList() {
-        return commentVoList;
+    public String getHeadurl() {
+        return headurl;
     }
 
-    public void setCommentVoList(List<CommentVo> commentVoList) {
-        this.commentVoList = commentVoList;
+    public void setHeadurl(String headurl) {
+        this.headurl = headurl;
     }
 }

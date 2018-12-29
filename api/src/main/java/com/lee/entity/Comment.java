@@ -1,5 +1,7 @@
 package com.lee.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,8 +18,11 @@ public class Comment implements Serializable {
 
     private String entitytype;
 
+    private String content;
+
     private String userid;
 
+    @JSONField(format = "yyyy-MM-dd HH点mm分")
     private Date creationtime;
 
     public String getId() {
@@ -60,12 +65,21 @@ public class Comment implements Serializable {
         this.creationtime = creationtime;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +
                 "id='" + id + '\'' +
                 ", entityid='" + entityid + '\'' +
                 ", entitytype='" + entitytype + '\'' +
+                ", content='" + content + '\'' +
                 ", userid='" + userid + '\'' +
                 ", creationtime=" + creationtime +
                 '}';
