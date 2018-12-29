@@ -121,7 +121,9 @@
         </div>
     </div>
 </div>
-
+<div id="content" class="layui-hide" style="width: 100%;height: 100%">
+    <input name="content" style="width: 100%;height: 100%">
+</div>
 <div class="fly-footer">
     <p><a href="http://fly.layui.com/" target="_blank">Fly社区</a> 2017 &copy; <a href="http://www.layui.com/"
                                                                                 target="_blank">layui.com 出品</a></p>
@@ -228,10 +230,10 @@
         </div>
         <div class="jieda-reply">
             <span class="jieda-zan" type="zan">
-                <i class="iconfeont icon-zan"></i>
-                            <em>0</em>
-            </span>
-            <span type="reply">
+                <i class="iconfont icon-zan"></i>
+                <em>0</em>
+              </span>
+            <span type="reply" onclick="add_comment('{{item.id}}','{{item.userid}}')">
                 <i class="iconfont icon-svgmoban53"></i>回复
             </span>
         </div>
@@ -243,7 +245,7 @@
                     <cite>{{item2.username}}</cite>
                 </a>
                 评论:
-                <a class="layui-bg-gray">
+                <a class="layui-bg-gray" href="javascript:void(0)">
                     {{item2.content}}
                 </a>
             </div>
@@ -259,15 +261,14 @@
 </script>
 <script>
     $(function () {
-        //详情页必须指定一条资讯
         let router = layui.router();
         if (router.search.id == undefined) {
             window.location = './index.html';
         } else {
             user_info();
-            news_detail_info(router.search.id);
             hot_news_info();
             comment_info(router.search.id);
+            news_detail_info(router.search.id);
         }
     });
 
@@ -372,7 +373,19 @@
 
     function chang_detail(id) {
         window.location = './detail.html?#/id=' + id;
-        window.location.reload();
+        comment_info(id);
+        news_detail_info(id);
+    }
+
+    function add_comment(id, userId) {
+
+        layer.open({
+            type: 1,
+            title: '回复',
+            content:'#content',
+            area: ['300px', '300px']
+        });
+
     }
 </script>
 </body>
