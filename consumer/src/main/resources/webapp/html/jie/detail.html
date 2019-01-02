@@ -82,7 +82,6 @@
         <div class="layui-col-md8 content detail">
             <!--详情-->
             <div class="fly-panel detail-box">
-                <!--<div id="news_detail_body"></div>-->
                 <div id="news_detail_view"></div>
             </div>
             <!--回帖-->
@@ -95,7 +94,17 @@
                     <div id="comment_item_view"></div>
                 </ul>
             </div>
+            <div class="layui-form">
+                <div class="layui-form-item">
+                    <textarea id="L_L_content" class="layui-textarea" style="height: 150px; width: 100%;"></textarea>
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn" onclick="addCommentToNews()">提交回复</button>
+                </div>
+            </div>
         </div>
+
+
         <!--热议-->
         <div class="layui-col-md4">
             <dl class="fly-panel fly-list-one">
@@ -121,9 +130,9 @@
         </div>
     </div>
 </div>
-<div id="content" class="layui-hide" style="width: 100%;height: 100%">
-    <input name="content" style="width: 100%;height: 100%">
-</div>
+<textarea id="content" required lay-verify="required"
+          placeholder="请输入内容" class="layui-textarea layui-hide"
+          style="height: 100%"></textarea>
 <div class="fly-footer">
     <p><a href="http://fly.layui.com/" target="_blank">Fly社区</a> 2017 &copy; <a href="http://www.layui.com/"
                                                                                 target="_blank">layui.com 出品</a></p>
@@ -152,7 +161,7 @@
     <ul class="layui-nav fly-nav-user">
         <li class="layui-nav-item">
             <a class="fly-nav-avatar" href="javascript:;">
-                <cite class="layui-hide-xs">{{d.username}}</cite>
+                <cite class="layui-hide-xs" id="username">{{d.username}}</cite>
                 <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i>
                 <i class="layui-badge fly-badge-vip layui-hide-xs">VIP</i>
                 <img src="{{d.headurl}}">
@@ -233,7 +242,7 @@
                 <i class="iconfont icon-zan"></i>
                 <em>0</em>
               </span>
-            <span type="reply" onclick="add_comment('{{item.id}}','{{item.userid}}')">
+            <span type="reply" onclick="add_comment('{{item.id}}')">
                 <i class="iconfont icon-svgmoban53"></i>回复
             </span>
         </div>
@@ -377,16 +386,89 @@
         news_detail_info(id);
     }
 
-    function add_comment(id, userId) {
-
-        layer.open({
-            type: 1,
-            title: '回复',
-            content:'#content',
-            area: ['300px', '300px']
-        });
-
+    function add_comment(id) {
+        if ($('#username').val() == undefined) {
+            window.location = '../user/login.html';
+        } else {
+            $('#content').removeClass('layui-hide');
+            layer.open({
+                type: 1,
+                title: '回复',
+                content: $('#content'),
+                area: ['300px', '250px'],
+                scrollbar: false,
+                cancel: function (index, layero) {
+                    $('#content').addClass('layui-hide');
+                },
+                btn: ['提交'],
+                yes: function (index, layero) {
+                    $.ajax(address + '/comment/addComment', {
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            'entitytype': '2',
+                            'entityid': id,
+                            'content': $('#content').val()
+                        }
+                    }).done(function (data) {
+                        if (data.code == '0') {
+                            layer.alert(data.message, {
+                                icon: 1,
+                                title: "提示"
+                            });
+                            layer.close(index);
+                            comment_info(layui.router().search.id);
+                            $('#content').addClass('layui-hide').val('');
+                        } else {
+                            layer.alert(data.message, {
+                                icon: 5,
+                                title: "提示"
+                            });
+                        }
+                    })
+                }
+            });
+        }
     }
+
+    function addCommentToNews() {
+
+        if ($('#username').val() == undefined) {
+            window.location = '../user/login.html';
+        } else {
+            if ($('#L_L_content').val() == '') {
+                layer.alert('内容为空', {
+                    icon: 1,
+                    title: "提示"
+                });
+            } else {
+                $.ajax(address + '/comment/addComment', {
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'entitytype': '1',
+                        'entityid': layui.router().search.id,
+                        'content': $('#L_L_content').val()
+                    }
+                }).done(function (data) {
+                    if (data.code == '0') {
+                        layer.alert(data.message, {
+                            icon: 1,
+                            title: "提示"
+                        });
+                        $('#L_L_content').val('');
+                        comment_info(layui.router().search.id);
+                    } else {
+                        layer.alert(data.message, {
+                            icon: 5,
+                            title: "提示"
+                        });
+                    }
+                })
+            }
+        }
+    }
+
 </script>
 </body>
 </html>

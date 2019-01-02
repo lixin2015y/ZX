@@ -27,6 +27,7 @@ public class ZxWebConfiguration implements WebMvcConfigurer {
         addPatterns.add("/user/**");
         addPatterns.add("/news/addNews");
         addPatterns.add("/news/getUserNews");
+        addPatterns.add("/comment/addComment");
         List<String> excludePatterns = new ArrayList<String>();
         excludePatterns.add("/html/user/login.html");
         excludePatterns.add("/html/user/reg.html");

@@ -1,7 +1,9 @@
 package com.lee.service;
 
 import com.lee.api.CommentService;
+import com.lee.constant.ZxException;
 import com.lee.dao.CommentDao;
+import com.lee.entity.Comment;
 import com.lee.vo.CommentVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,5 +24,11 @@ public class CommentServiceImpl implements CommentService {
     public List<CommentVo> getComments(String newsId) {
 
         return commentDao.getCommentList(newsId);
+    }
+
+    public void addComment(Comment comment) throws ZxException {
+        if (commentDao.addComment(comment) != 1) {
+            throw new ZxException("添加回复失败");
+        }
     }
 }

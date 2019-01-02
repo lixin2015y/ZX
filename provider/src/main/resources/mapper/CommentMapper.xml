@@ -1,6 +1,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lee.dao.CommentDao">
 
+    <sql id="CommentBaseSql">
+        id,entityid,entitytype,content,userid,creationtime
+    </sql>
+
     <resultMap id="baseResultMap" type="com.lee.entity.Comment">
         <id column="id" property="id"></id>
         <result column="entityid" property="entityid"></result>
@@ -54,4 +58,9 @@
             c.entityid = #{id}
         AND c.entitytype = '2'
     </select>
+
+    <insert id="addComment" parameterType="com.lee.entity.Comment">
+        insert into comment (<include refid="CommentBaseSql"></include> )
+        values (#{id}, #{entityid}, #{entitytype}, #{content}, #{userid}, #{creationtime})
+    </insert>
 </mapper>
