@@ -21,7 +21,7 @@ public class RedisConfig {
 
 
     /**
-     * @author lee
+     * @author 纯洁的微笑
      * @source http://www.ityouknow.com/springboot/2016/03/06/spring-boot-redis.html
      * @param redisConnectionFactory
      * @return

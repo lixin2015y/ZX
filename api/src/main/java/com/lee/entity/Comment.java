@@ -22,6 +22,8 @@ public class Comment implements Serializable {
 
     private String userid;
 
+    private Integer like;
+
     @JSONField(format = "yyyy-MM-dd HH点mm分")
     private Date creationtime;
 
@@ -71,6 +73,14 @@ public class Comment implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Integer getLike() {
+        return like;
+    }
+
+    public void setLike(Integer like) {
+        this.like = like;
     }
 
     @Override
