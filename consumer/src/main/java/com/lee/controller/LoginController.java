@@ -4,6 +4,7 @@ import com.lee.api.LoginService;
 import com.lee.constant.ResponseMessage;
 import com.lee.constant.Result;
 import com.lee.entity.User;
+import com.lee.model.HostHolder;
 import com.lee.utils.Utils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -34,6 +35,11 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
+
+    @Autowired
+    HostHolder hostHolder;
+
+
     @PostMapping("register")
     public ResponseMessage register(@RequestBody User user, HttpServletResponse response) {
 
@@ -41,7 +47,7 @@ public class LoginController {
             return Result.error("必要参数为空");
         }
 
-        if (loginService.checkEmail(user.getEmail(),null)) {
+        if (loginService.checkEmail(user.getEmail(), null)) {
             return Result.error("用户已被注册");
         }
 
@@ -85,7 +91,7 @@ public class LoginController {
             return Result.error("必要参数为空");
         }
 
-        if (!loginService.checkEmail(user.getEmail(),null)) {
+        if (!loginService.checkEmail(user.getEmail(), null)) {
             return Result.error("该邮箱不存在");
         }
 
@@ -120,11 +126,8 @@ public class LoginController {
     }
 
     @PostMapping("getUserInfoByTicket")
-    ResponseMessage getUserInfo(@CookieValue(name = "ticket", required = false) String ticket) {
-        if (StringUtils.isBlank(ticket)) {
-            return Result.success(null);
-        }
-        return Result.success(loginService.selectUserByTicket(ticket));
+    ResponseMessage getUserInfo() {
+        return Result.success(hostHolder.getUser());
     }
 
 

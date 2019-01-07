@@ -137,22 +137,8 @@ layui.define('fly', function(exports){
 
   //解答操作
   gather.jiedaActive = {
-    zan: function(li){ //赞
-      var othis = $(this), ok = othis.hasClass('zanok');
-      fly.json('/api/jieda-zan/', {
-        ok: ok
-        ,id: li.data('id')
-      }, function(res){
-        if(res.status === 0){
-          var zans = othis.find('em').html()|0;
-          othis[ok ? 'removeClass' : 'addClass']('zanok');
-          othis.find('em').html(ok ? (--zans) : (++zans));
-        } else {
-          layer.msg(res.msg);
-        }
-      });
-    }
-    ,reply: function(li){ //回复
+
+    reply: function(li){ //回复
       var val = dom.content.val();
       var aite = '@'+ li.find('.fly-detail-user cite').text().replace(/\s/g, '');
       dom.content.focus()

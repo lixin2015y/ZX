@@ -18,6 +18,10 @@ public class Result {
         return new ResponseMessage("-1", "失败", null);
     }
 
+    public static ResponseMessage error(String code, String message) {
+        return new ResponseMessage(code, message, null);
+    }
+
     public static ResponseMessage error(Object data) {
         return new ResponseMessage("-1", "失败", data);
     }

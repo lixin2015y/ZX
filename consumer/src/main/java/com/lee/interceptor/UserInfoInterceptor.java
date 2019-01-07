@@ -1,6 +1,7 @@
 package com.lee.interceptor;
 
 import com.lee.api.UserService;
+import com.lee.entity.User;
 import com.lee.model.HostHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author lee
  */
 @Component
-public class PassportInterceptor implements HandlerInterceptor {
+public class UserInfoInterceptor implements HandlerInterceptor {
 
     @Autowired
     RedisTemplate redisTemplate;
@@ -32,12 +34,30 @@ public class PassportInterceptor implements HandlerInterceptor {
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        if (hostHolder.getUser() == null) {
-            logger.info("未登录");
-            response.sendRedirect("/html/user/login.html");
-            return true;
+        String ticket = null;
+        if (request.getCookies() != null) {
+            for (Cookie cookie : request.getCookies()) {
+                if (cookie.getName().equals("ticket")) {
+                    ticket = cookie.getValue();
+                }
+                break;
+            }
+        }
+
+        if (ticket != null) {
+            logger.info("存在ticket");
+            if (redisTemplate.hasKey(ticket)) {
+                User user = userService.selectUserTotalInfoByTicket(ticket);
+                if (user != null) {
+                    hostHolder.setUser(user);
+                } else {
+                    logger.info("数据库未发现此数据");
+                }
+            } else {
+                logger.info("缓存未发现此数据");
+            }
         } else {
-            logger.info("已登录");
+            logger.debug("ticket不存在");
         }
         return true;
     }
@@ -46,5 +66,8 @@ public class PassportInterceptor implements HandlerInterceptor {
     }
 
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        if (hostHolder.getUser() != null) {
+            hostHolder.clear();
+        }
     }
 }

@@ -16,6 +16,7 @@ public class CommentVo extends Comment {
 
     private List<CommentVo> commentVoList;
 
+    private String islike;
 
     public List<CommentVo> getCommentVoList() {
         return commentVoList;
@@ -41,4 +42,11 @@ public class CommentVo extends Comment {
         this.headurl = headurl;
     }
 
+    public String getIslike() {
+        return islike;
+    }
+
+    public void setIslike(String islike) {
+        this.islike = islike;
+    }
 }

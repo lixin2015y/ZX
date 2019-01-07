@@ -166,8 +166,8 @@
         return layui.each(o.event[u], l), a[0] && layui.each(o.event[t], l), i
     }, e.layui = new n
 }(window);
-let address = 'http://localhost:8080'
-
+let address = 'http://47.107.119.117:8080';
+// let address = 'http://localhost:8080';
 layui.cache.user = {
     username: '游客'
     , uid: -1

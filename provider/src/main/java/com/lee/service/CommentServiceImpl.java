@@ -31,4 +31,12 @@ public class CommentServiceImpl implements CommentService {
             throw new ZxException("添加回复失败");
         }
     }
+
+
+    public void updateLike(String commentId, int like) throws ZxException {
+
+        if (commentDao.updateLike(commentId, like) != 1) {
+            throw new ZxException("修改数据错误");
+        }
+    }
 }

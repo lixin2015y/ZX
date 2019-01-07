@@ -19,6 +19,7 @@
         <result column="entityid" property="entityid"></result>
         <result column="entitytype" property="entitytype"></result>
         <result column="content" property="content"></result>
+        <result column="like" property="like"></result>
         <result column="userid" property="userid"></result>
         <result column="creationtime" property="creationtime"></result>
         <result column="username" property="username"></result>
@@ -42,6 +43,7 @@
         <result column="entityid" property="entityid"></result>
         <result column="entitytype" property="entitytype"></result>
         <result column="content" property="content"></result>
+        <result column="like" property="like"></result>
         <result column="userid" property="userid"></result>
         <result column="creationtime" property="creationtime"></result>
         <result column="username" property="username"></result>
@@ -63,4 +65,10 @@
         insert into comment (<include refid="CommentBaseSql"></include> )
         values (#{id}, #{entityid}, #{entitytype}, #{content}, #{userid}, #{creationtime})
     </insert>
+
+    <update id="updateLike">
+        UPDATE `comment`
+        SET `like` = #{like}
+        WHERE id = #{commentId}
+    </update>
 </mapper>

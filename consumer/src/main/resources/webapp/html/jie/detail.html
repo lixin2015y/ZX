@@ -238,10 +238,18 @@
             <p>{{item.content}}</p>
         </div>
         <div class="jieda-reply">
-            <span class="jieda-zan" type="zan">
+            {{# if(item.islike==undefined){ }}
+            <span class="jieda-zan" onclick="like('{{item.id}}')">
+            {{#  } else { }}
+            <span class="jieda-zan" style="color:#c00" onclick="dislike('{{item.id}}')">
+            {{#  } }}
                 <i class="iconfont icon-zan"></i>
-                <em>0</em>
-              </span>
+                {{#  if(item.like==undefined){ }}
+                    <em>0</em>
+                {{#  } else { }}
+                    <em>{{item.like}}</em>
+                {{#  } }}
+            </span>
             <span type="reply" onclick="add_comment('{{item.id}}')">
                 <i class="iconfont icon-svgmoban53"></i>回复
             </span>
@@ -467,6 +475,38 @@
                 })
             }
         }
+    }
+
+    function like(commentId) {
+        event.stopPropagation();
+        $.ajax(address + '/comment/like', {
+            type: 'post',
+            dataType: 'json',
+            data: {'commentId': commentId}
+        }).done(function (data) {
+            if (data.code == 0) {
+                comment_info(layui.router().search.id);
+            }
+            if (data.code == 9) {
+                layer.alert("请先登录");
+            }
+        })
+    }
+
+    function dislike(commentId) {
+        event.stopPropagation();
+        $.ajax(address + '/comment/dislike', {
+            type: 'post',
+            dataType: 'json',
+            data: {'commentId': commentId}
+        }).done(function (data) {
+            if (data.code == 0) {
+                comment_info(layui.router().search.id);
+            }
+            if (data.code == 9) {
+                layer.alert("请先登录");
+            }
+        })
     }
 
 </script>

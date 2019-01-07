@@ -15,4 +15,6 @@ public interface CommentService {
 
     void addComment(Comment comment) throws ZxException;
 
+    void updateLike(String commentId, int like) throws ZxException;
+
 }
