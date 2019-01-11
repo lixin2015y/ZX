@@ -9,6 +9,9 @@ import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
 
+/**
+ * @author lee
+ */
 public class QiniuUtil {
 
     public static String upload(byte[] bytes) {
@@ -17,7 +20,7 @@ public class QiniuUtil {
         String accessKey = "RMCut4R8SxOQDAqF2ANDxLSzep0ySC-IKPmzTdBh";
         String secretKey = "FjEql3IDn1buR7Rwme4AjEgHw-v5tGqZWpUUHH3k";
         String bucket = "zx-bucket";
-        String host = "http://pji7cj26b.bkt.clouddn.com/";
+        String host = "http://static.coderlee.xyz/";
         String key = null;
 
         Auth auth = Auth.create(accessKey, secretKey);

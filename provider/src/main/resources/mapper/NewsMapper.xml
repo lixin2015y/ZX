@@ -112,7 +112,7 @@
         WHERE
         1=1
         <if test="title != null and title != ''">
-            AND n.title LIKE '%'#{title}'%'
+            AND n.title LIKE CONCAT('%',#{title},'%')
         </if>
         <if test="newstype !=null and newstype != ''">
             AND n.newstype = #{newstype}
@@ -123,11 +123,11 @@
     </select>
 
     <select id="getNewsTotal" parameterType="com.lee.vo.NewsPageVo" resultType="java.lang.Integer">
-        select count(*) from news
+        select count(*) from news n
         WHERE
         1=1
         <if test="title != null and title != ''">
-            AND n.title LIKE '%'#{title}'%'
+            AND n.title LIKE CONCAT('%',#{title},'%')
         </if>
         <if test="newstype !=null and newstype != ''">
             AND n.newstype = #{newstype}

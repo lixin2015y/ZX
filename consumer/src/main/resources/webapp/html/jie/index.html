@@ -47,14 +47,14 @@
 
 <div class="fly-panel fly-column">
     <div class="layui-container">
-        <ul class="layui-clear">
+        <ul class="layui-clear" id="news_type_item">
             <li class="layui-hide-xs"><a href="../jie/index.html">首页</a></li>
-            <li class="layui-this"><a href="">提问</a></li>
-            <li><a href="">分享<span class="layui-badge-dot"></span></a></li>
-            <li><a href="">讨论</a></li>
-            <li><a href="">建议</a></li>
-            <li><a href="">公告</a></li>
-            <li><a href="">动态</a></li>
+            <li><a href="javascript:void(0)" onclick="change_type(0)">提问</a></li>
+            <li><a href="javascript:void(0)" onclick="change_type(1)">分享</a></li>
+            <li><a href="javascript:void(0)" onclick="change_type(2)">讨论</a></li>
+            <li><a href="javascript:void(0)" onclick="change_type(3)">建议</a></li>
+            <li><a href="javascript:void(0)" onclick="change_type(4)">公告</a></li>
+            <li><a href="javascript:void(0)" onclick="change_type(5)">动态</a></li>
             <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><span class="fly-mid"></span></li>
         </ul>
 
@@ -134,14 +134,7 @@
 <script src="../../res/layui/layui.js"></script>
 <script type="text/javascript" src="../../res/jquery-1.7.2.min.js"></script>
 <script>
-    layui.cache.page = 'jie';
-    layui.cache.user = {
-        username: '游客'
-        , uid: -1
-        , avatar: '../../res/images/avatar/00.jpg'
-        , experience: 83
-        , sex: '男'
-    };
+
 </script>
 
 <script id="user_tmp" type="text/html">
@@ -180,7 +173,7 @@
             <a href="./detail.html?#/id={{item.id}}">{{item.title}}</a>
         </h2>
         <div class="fly-list-info">
-            <a href="user/home.html" link>
+            <a href="../user/home.html" link>
                 <cite>{{item.username}}</cite>
             </a>
             <span>{{item.creationtime}}</span>
@@ -204,13 +197,13 @@
 </script>
 <script id="hot_news_info_tmp" type="text/html">
     {{#  layui.each(d, function(index, item){ }}
-        <dd>
-            <a href="./detail.html?#/id={{item.id}}">{{item.title}}</a>
-            <span><i class="iconfont icon-pinglun1"></i> {{item.commentcount}}</span>
-        </dd>
+    <dd>
+        <a href="./detail.html?#/id={{item.id}}">{{item.title}}</a>
+        <span><i class="iconfont icon-pinglun1"></i> {{item.commentcount}}</span>
+    </dd>
     {{#  }); }}
     {{#  if(d.length === 0){ }}
-        无数据
+    无数据
     {{#  } }}
 </script>
 <script>
@@ -219,7 +212,66 @@
         user_info();
         news_info();
         hot_news_info();
+
+        $('.fly-search').on('click', function () {
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: false,
+                shadeClose: true,
+                maxWidth: 10000,
+                skin: 'fly-layer-search',
+                content: ['<input autocomplete="off" placeholder="搜索内容，回车跳转" type="text">'].join(''),
+                success: function (layero) {
+                    let input = layero.find('input');
+                    input.focus();
+                    input.bind('keyup', function(event) {
+                        if (event.keyCode == "13") {
+                            $.ajax(address + '/news/getNews', {
+                                type: 'POST',
+                                dataType: 'json',
+                                contentType: 'application/json; charset:UTF-8',
+                                data: JSON.stringify({
+                                    pageNum: 1,
+                                    pageSize: 10,
+                                    title: input.val()
+                                })
+                            }).done(function (data) {
+                                input.val('');
+                                layer.closeAll();
+                                news_info_show(data.data);
+                                layui.use('laypage', function () {
+                                    let laypage = layui.laypage;
+                                    laypage.render({
+                                        elem: 'user_info_page',
+                                        count: data.data.total,
+                                        jump: function (obj, first) {
+                                            if (!first) {
+                                                $.ajax(address + '/news/getNews', {
+                                                    type: 'POST',
+                                                    dataType: 'json',
+                                                    contentType: 'application/json; charset:UTF-8',
+                                                    data: JSON.stringify({
+                                                        pageNum: obj.curr,
+                                                        pageSize: obj.limit,
+                                                        newstype: layui.router().search.newstype
+                                                    })
+                                                }).done(function (data) {
+                                                    news_info_show(data.data);
+                                                })
+                                            }
+                                        }
+                                    })
+                                })
+                            })
+                        }
+                    });
+
+                }
+            })
+        });
     })
+
 
     function user_info() {
         $.ajax(address + '/login/getUserInfoByTicket', {
@@ -244,13 +296,24 @@
     }
 
     function news_info() {
+
+        $('#news_type_item').find('li').each(function () {
+            if ($(this).index() - 1 == layui.router().search.newstype) {
+                $(this).addClass('layui-this');
+            } else {
+                $(this).removeClass('layui-this');
+            }
+        })
+
+
         $.ajax(address + '/news/getNews', {
             type: 'POST',
             dataType: 'json',
             contentType: 'application/json; charset:UTF-8',
             data: JSON.stringify({
                 pageNum: 1,
-                pageSize: 10
+                pageSize: 10,
+                newstype: layui.router().search.newstype
             })
         }).done(function (data) {
             news_info_show(data.data);
@@ -267,7 +330,8 @@
                                 contentType: 'application/json; charset:UTF-8',
                                 data: JSON.stringify({
                                     pageNum: obj.curr,
-                                    pageSize: obj.limit
+                                    pageSize: obj.limit,
+                                    newstype: layui.router().search.newstype
                                 })
                             }).done(function (data) {
                                 news_info_show(data.data);
@@ -351,5 +415,12 @@
             window.location.reload()
         })
     }
+
+
+    function change_type(newstype) {
+        window.location = './index.html?#/newstype=' + newstype;
+        news_info();
+    }
+
 </script>
 

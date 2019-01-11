@@ -50,19 +50,15 @@
         <div class="layui-container">
             <ul class="layui-clear">
                 <li class="layui-hide-xs"><a href="../jie/index.html">首页</a></li>
-                <li class="layui-this"><a href="">提问</a></li>
-                <li><a href="">分享<span class="layui-badge-dot"></span></a></li>
-                <li><a href="">讨论</a></li>
-                <li><a href="">建议</a></li>
-                <li><a href="">公告</a></li>
-                <li><a href="">动态</a></li>
+                <li><a href="javascript:void(0)" onclick="change_type(0)">提问</a></li>
+                <li><a href="javascript:void(0)" onclick="change_type(1)">分享</a></li>
+                <li><a href="javascript:void(0)" onclick="change_type(2)">讨论</a></li>
+                <li><a href="javascript:void(0)" onclick="change_type(3)">建议</a></li>
+                <li><a href="javascript:void(0)" onclick="change_type(4)">公告</a></li>
+                <li><a href="javascript:void(0)" onclick="change_type(5)">动态</a></li>
                 <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><span class="fly-mid"></span></li>
 
-                <!-- 用户登入后显示 -->
-                <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a
-                        href="../user/index.html">我发表的贴</a></li>
-                <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a
-                        href="../user/index.html#collection">我收藏的贴</a></li>
+
             </ul>
 
             <div class="fly-column-right layui-hide-xs">
@@ -509,6 +505,11 @@
         })
     }
 
+
+    function change_type(newstype) {
+        window.location = './index.html?#/newstype=' + newstype;
+        news_info();
+    }
 </script>
 </body>
 </html>
