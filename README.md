@@ -5,7 +5,9 @@
 # 前台使用layui论坛社区模板
 # 数据库mysql5.7  redis5.0.2  部署在阿里云ECS服务器上
 # maven3.5.9构建项目
-# nginx 1.42 阿里云域名解析coderlee.xyz 做反向代理
+# nginx 1.42 阿里云域名解析coderlee.xyz 做反向代理(不用了)
 # 七牛云对象存储（图片）
+
+
 
         

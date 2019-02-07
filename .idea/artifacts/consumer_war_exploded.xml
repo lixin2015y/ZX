@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="consumer:war exploded">
-    <output-path>$PROJECT_DIR$/consumer/target/zx</output-path>
+    <output-path>$PROJECT_DIR$/consumer/target/ROOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -102,7 +102,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/consumer/target/zx/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/consumer/target/ROOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="consumer/web/Web" />
     </root>

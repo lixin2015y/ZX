@@ -319,7 +319,6 @@
         let form = layui.form;
 
         form.on('submit(user_info_update)', function (data) {
-            alert(JSON.stringify(data.field));
             $.ajax(address + '/user/updateUserInfo', {
                 type: 'POST',
                 contentType: "application/json;charset=utf-8",

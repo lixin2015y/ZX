@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="consumer:war">
     <output-path>$PROJECT_DIR$/consumer/target</output-path>
-    <root id="archive" name="zx.war">
+    <root id="archive" name="ROOT.war">
       <element id="artifact" artifact-name="consumer:war exploded" />
     </root>
   </artifact>
