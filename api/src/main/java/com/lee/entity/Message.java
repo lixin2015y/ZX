@@ -89,4 +89,18 @@ public class Message implements Serializable {
     public void setDeleted(String deleted) {
         this.deleted = deleted;
     }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "id='" + id + '\'' +
+                ", fromid='" + fromid + '\'' +
+                ", fromtype='" + fromtype + '\'' +
+                ", toid='" + toid + '\'' +
+                ", messageid='" + messageid + '\'' +
+                ", entityid='" + entityid + '\'' +
+                ", time=" + time +
+                ", deleted='" + deleted + '\'' +
+                '}';
+    }
 }
