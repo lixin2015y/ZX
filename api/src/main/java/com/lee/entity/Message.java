@@ -18,7 +18,7 @@ public class Message implements Serializable {
 
     private String toid;
 
-    private String messageid;
+    private String messagetype;
 
     private String entityid;
 
@@ -58,12 +58,12 @@ public class Message implements Serializable {
         this.toid = toid;
     }
 
-    public String getMessageid() {
-        return messageid;
+    public String getMessagetype() {
+        return messagetype;
     }
 
-    public void setMessageid(String messageid) {
-        this.messageid = messageid;
+    public void setMessagetype(String messagetype) {
+        this.messagetype = messagetype;
     }
 
     public String getEntityid() {
@@ -97,7 +97,7 @@ public class Message implements Serializable {
                 ", fromid='" + fromid + '\'' +
                 ", fromtype='" + fromtype + '\'' +
                 ", toid='" + toid + '\'' +
-                ", messageid='" + messageid + '\'' +
+                ", messagetype='" + messagetype + '\'' +
                 ", entityid='" + entityid + '\'' +
                 ", time=" + time +
                 ", deleted='" + deleted + '\'' +

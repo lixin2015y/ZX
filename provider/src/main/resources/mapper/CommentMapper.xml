@@ -71,4 +71,36 @@
         SET `like` = #{like}
         WHERE id = #{commentId}
     </update>
+
+    <select id="getUserByNewsId" resultType="com.lee.entity.User">
+        SELECT
+	      u.*
+        FROM
+            news n,
+            `user` u
+        WHERE
+            n.userid = u.id
+        AND n.id = #{newsId}
+    </select>
+
+    <select id="getUserByCommentId" resultType="com.lee.entity.User">
+        SELECT
+            u.*
+        FROM
+            `comment` c,
+            `user` u
+        WHERE
+            c.userid = u.id
+        AND c.id = #{commentId}
+    </select>
+
+    <select id="getNewsByCommentId" resultType="java.lang.String">
+        SELECT
+            entityid
+        FROM
+            `comment`
+        WHERE
+            id = #{commentId}
+        LIMIT 1
+    </select>
 </mapper>

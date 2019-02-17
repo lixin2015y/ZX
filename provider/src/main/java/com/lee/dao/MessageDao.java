@@ -1,5 +1,6 @@
 package com.lee.dao;
 
+import com.lee.entity.Message;
 import com.lee.vo.MessageVo;
 
 import java.util.List;
@@ -10,5 +11,7 @@ import java.util.List;
 public interface MessageDao {
 
     List<MessageVo> getMessage();
+
+    int addMessage(Message message);
 
 }
