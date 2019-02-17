@@ -23,4 +23,6 @@
     <dubbo:service interface="com.lee.api.NewsService" ref="newsServiceImpl"/>
 
     <dubbo:service interface="com.lee.api.CommentService" ref="commentServiceImpl"/>
+
+    <dubbo:service interface="com.lee.api.MessageService" ref="messageServiceImpl"/>
 </beans>

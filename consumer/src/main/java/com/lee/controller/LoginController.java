@@ -35,7 +35,6 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
-
     @Autowired
     HostHolder hostHolder;
 

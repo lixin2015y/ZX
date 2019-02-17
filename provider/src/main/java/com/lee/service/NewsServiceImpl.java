@@ -24,16 +24,19 @@ public class NewsServiceImpl implements NewsService {
     @Autowired
     NewsDao newsDao;
 
+    @Override
     public void addNews(News news) throws ZxException {
         if (newsDao.addNews(news) != 1) {
             throw new ZxException("添加数据失败");
         }
     }
 
+    @Override
     public List<UserNewsVo> selectUserNews(String userid) {
         return newsDao.selectUserNews(userid);
     }
 
+    @Override
     public Map<String, Object> getNews(NewsPageVo newsPageVo) {
         Map<String, Object> map = new HashMap<String, Object>(16);
         newsPageVo.initPage();
@@ -42,10 +45,12 @@ public class NewsServiceImpl implements NewsService {
         return map;
     }
 
+    @Override
     public List<NewsVo> getHotNews() {
         return newsDao.getHotNews();
     }
 
+    @Override
     public NewsDetailVo getNewsDetail(String id) {
         return newsDao.getNewsDetail(id);
     }

@@ -1,0 +1,15 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.dao.MessageDao">
+
+
+    <resultMap id="baseResultMap" type="com.lee.entity.Comment">
+
+    </resultMap>
+
+    <resultMap id="getMessage" type="com.lee.vo.MessageVo">
+
+    </resultMap>
+    <select id="getMessage" resultMap="getMessage">
+
+    </select>
+</mapper>

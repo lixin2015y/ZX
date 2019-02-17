@@ -22,4 +22,7 @@
 
     <dubbo:reference id="commentService" interface="com.lee.api.CommentService" check="false"
                      url="dubbo://127.0.0.1:20880/com.lee.api.CommentService"></dubbo:reference>
+
+    <dubbo:reference id="messageService" interface="com.lee.api.MessageService" check="false"
+                     url="dubbo://127.0.0.1:20880/com.lee.api.MessageService"></dubbo:reference>
 </beans>
