@@ -10,8 +10,11 @@ import java.util.List;
  **/
 public interface MessageDao {
 
-    List<MessageVo> getMessage();
+    List<MessageVo> getMessage(String userId);
 
     int addMessage(Message message);
 
+    int deleteMessage(String messageId);
+
+    int deleteAllMessage(String toId);
 }

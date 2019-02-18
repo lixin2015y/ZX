@@ -56,6 +56,9 @@ public class LoginController {
         user.setJointime(new Date());
         user.setSalt(Utils.getUUID(6));
         user.setTicket(ticket);
+        user.setHeadurl("http://static.coderlee.xyz/6.jpg");
+        user.setCity("未知");
+        user.setSign("这家伙很懒，什么也没留下。。。");
         if (StringUtils.isBlank(user.getUsername())) {
             user.setUsername(user.getEmail().split("@")[0]);
         }

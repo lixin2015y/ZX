@@ -91,21 +91,19 @@ public class CommentController {
 
         User user = hostHolder.getUser();
 
-        if (user != null) {
-
-            SetOperations set = redisTemplate.opsForSet();
-
-            set.add(COMMENT + commentId, user.getId());
-
-            try {
-                commentService.updateLike(commentId, set.members(COMMENT + commentId).size());
-            } catch (ZxException e) {
-                e.printStackTrace();
-                return Result.error(e.getMessage());
-            }
-
-        } else {
+        if (user == null) {
             return Result.error("9", "点赞需登录");
+        }
+
+        SetOperations set = redisTemplate.opsForSet();
+
+        set.add(COMMENT + commentId, user.getId());
+
+        try {
+            commentService.updateLike(commentId, set.members(COMMENT + commentId).size());
+        } catch (ZxException e) {
+            e.printStackTrace();
+            return Result.error(e.getMessage());
         }
 
         return Result.success("点赞成功");
@@ -121,19 +119,20 @@ public class CommentController {
 
         User user = hostHolder.getUser();
 
-        if (user != null) {
-            SetOperations set = redisTemplate.opsForSet();
-            set.remove(COMMENT + commentId, user.getId());
-            try {
-                commentService.updateLike(commentId, set.members(COMMENT + commentId).size());
-            } catch (ZxException e) {
-                e.printStackTrace();
-                return Result.error(e.getMessage());
-            }
-        } else {
+        if (user == null) {
             return Result.error("9", "取消赞需登录");
         }
 
+        SetOperations set = redisTemplate.opsForSet();
+
+        set.remove(COMMENT + commentId, user.getId());
+
+        try {
+            commentService.updateLike(commentId, set.members(COMMENT + commentId).size());
+        } catch (ZxException e) {
+            e.printStackTrace();
+            return Result.error(e.getMessage());
+        }
         return Result.success();
     }
 

@@ -1,5 +1,7 @@
 package com.lee.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -22,6 +24,7 @@ public class Message implements Serializable {
 
     private String entityid;
 
+    @JSONField(format = "yyyy-MM-dd HH点mm分")
     private Date time;
 
     private String deleted;

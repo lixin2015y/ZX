@@ -61,9 +61,39 @@
 
 
     <resultMap id="getMessage" type="com.lee.vo.MessageVo">
-
+        <id column="id" property="id"></id>
+        <result column="fromid" property="fromid"></result>
+        <result column="fromtype" property="fromtype"></result>
+        <result column="toid" property="toid"></result>
+        <result column="messagetype" property="messagetype"></result>
+        <result column="entityid" property="entityid"></result>
+        <result column="time" property="time"></result>
+        <result column="deleted" property="deleted"></result>
+        <result column="username" property="username"></result>
+        <result column="userid" property="userid"></result>
     </resultMap>
     <select id="getMessage" resultMap="getMessage">
-
+        SELECT
+            message.*, `user`.id,
+            `user`.username
+        FROM
+            message
+        LEFT JOIN `user` ON `user`.id = message.fromid
+        WHERE
+            toid = #{userId}
+        AND deleted = '0'
+        ORDER BY time DESC
     </select>
+
+    <update id="deleteMessage" parameterType="java.lang.String">
+        UPDATE message
+        SET deleted = '1'
+        WHERE id = #{messageId}
+    </update>
+
+    <update id="deleteAllMessage" parameterType="java.lang.String">
+        UPDATE message
+        SET deleted = '1'
+        WHERE toid = #{toId}
+    </update>
 </mapper>

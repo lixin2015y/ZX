@@ -1,5 +1,6 @@
 package com.lee.api;
 
+import com.lee.constant.ZxException;
 import com.lee.vo.MessageVo;
 
 import java.util.List;
@@ -10,5 +11,9 @@ import java.util.List;
 public interface MessageService {
 
     List<MessageVo> getMessage(String userId);
+
+    void deleteMessage(String messageId) throws ZxException;
+
+    void deleteAllMessage(String toId);
 
 }
