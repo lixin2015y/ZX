@@ -1,7 +1,7 @@
 # zx 
-# springboot2.0.4 dubbo mybatis
+# springboot dubbo mybatis
 # 前台layui论坛社区模板
-# 数据库mysql5.7  redis5.0.2  maven3.5.9
+# 数据库mysql5  redis  maven
 # 七牛云对象存储（图片）
 # 主要功能
   + 用户登录注册功能，用户登录后可以保持七天登录状态，再次登录不许输入密码。
